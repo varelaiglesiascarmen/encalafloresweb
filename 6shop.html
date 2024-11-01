@@ -9,39 +9,23 @@
     <meta name=”author” content=”carmen varela”>
     <link rel="stylesheet" href="hoja_estilo.css">
 </head>
-
+<script>
+    function ir_shop(sitio) {
+        window.location.href = sitio;
+    }
+</script>
 <body>
     <div class="cabeza">
-        <!-- <div class="cabeza-left"> -->
-            <button class="c" onclick="ir_shop()">Shop ▼</button>
-            <script>
-                function ir_shop() {
-                    window.location.href = "6shop.html";
-                }
-            </script>
-            <button class="c" onclick="ir_shop()">Lookbooks</button>
-            <script>
-                function ir_lookbooks() {
-                    window.location.href = "3lookbooks.html";
-                }
-            </script>
-            <button class="c" onclick="ir_shop()">About us</button>
-            <script>
-                function ir_aboutus() {
-                    window.location.href = "4aboutus.html";
-                }
-            </script>
-        <!-- </div> -->
-        <div class="cesta">
-            <button class="d" onclick="ir_lista"><img src="lista_compra.png"></button>
-            <script>
-                function ir_lista() {
-                    window.location.href = "11lista.html";
-                }
-            </script>
+        <div class="cabeza-left">
+            <button class="c" onclick="ir_shop('6shop.html')">Shop ▼</button>
+            <button class="c" onclick="ir_shop('3lookbooks.html')">Lookbooks</button>
+            <button class="c" onclick="ir_shop('4aboutus.html')">About us</button>
         </div>
-
+        <div class="cesta">
+            <button class="d" onclick="ir_shop('11lista.html')"><img src="lista_compra.png"></button>
+        </div>
     </div>
+    <br />
     <button onclick="ir_cami1"><img src="cami1.1.png"></button>
     <script>
         function ir_cami1() {
@@ -49,5 +33,4 @@
         }
     </script>
 </body>
-
 </html>

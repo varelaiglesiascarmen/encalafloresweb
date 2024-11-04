@@ -85,3 +85,15 @@
 .d {
     border: 0px solid;
 }
+
+.producto {
+    border: 0px solid;
+    text-align: left;
+}
+.punto{
+    font-size: 25px;
+    
+    color: #000000;
+   
+    width: 400px;
+}

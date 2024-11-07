@@ -21,7 +21,7 @@
 }
 
 .menu {
-    background-image: url("foto_menu_prueba.jpg");
+    background-image: url("../images/foto_menu_prueba.jpg");
     background-size: cover;
     background-repeat: no-repeat;
     text-align: center;
@@ -54,7 +54,7 @@
 
 .cabeza {
     position: relative;
-    background-image: url("foto_logo.png");
+    background-image: url("../images/banner.png");
     background-repeat: no-repeat;
     background-position: top;
     width: 100%;

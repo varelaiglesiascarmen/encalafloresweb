@@ -6,18 +6,13 @@
         <meta name=”description” content=”moda”>
         <meta name=”keywords” content=”moda,andaluza,emergente,sevilla,camiseta,sevillana,ropa”>
         <meta name=”author” content=”carmen varela”>
-        <link rel="stylesheet" href="hoja_estilo.css">
+        <link rel="stylesheet" href="CSS/styles.css">
+        <script src="JS/scripts.js"></script>
     </head>
     <body>
-        <video class="intro" muted autoplay> <!----el formato quiero que sea en la pág entera y tenga un botón de skip-->
-            <source src="videoprueba.mp4" type="video/mp4">
+        <video class="intro" muted autoplay> 
+            <source src="media/intro.mp4" type="video/mp4">
         </video>
-        <button class="skip" onclick="ir_menu()">Skip intro  ></button>
-        <script>
-            function ir_menu()
-            {
-                window.location.href="2menu.html";
-            }
-        </script>
+        <button class="skip" onclick="visita('principal.html')">>  Skip intro</button>
     </body>
 </html>

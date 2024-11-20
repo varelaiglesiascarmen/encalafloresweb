@@ -2,63 +2,69 @@
 <html lenguaje=”es”>
 
 <head>
-    <title>En ca la flores | De la falda a la calle</title>
+    <title>En ca la flores | SHOP</title>
     <meta charset=”utf-8”>
     <meta name=”description” content=”moda”>
     <meta name=”keywords” content=””>
     <meta name=”author” content=”carmen varela”>
     <link rel="stylesheet" href="CSS/styles.css">
     <script src="JS/scripts.js"></script>
+
 </head>
+
 <body>
     <div class="cabeza">
         <div class="cabeza-left">
-            <button class="c" onclick="visita('services.html')">Shop ▼</button>
-            <button class="c" onclick="visita('gallery.html')">Lookbooks</button>
+            <button class="c" onclick="visita('6shop.html')">Shop ▼</button>
+            <button class="c" onclick="visita('3lookbooks.html')">Lookbooks</button>
             <button class="c" onclick="visita('about.html')">About us</button>
         </div>
         <div class="cesta">
-            <button class="d" onclick="visita('shopping_list.html')"><img src="lista_compra.png"></button>
+            <button class="d" onclick="visita('11lista.html')"><img src="images/lista_compra.png"></button>
         </div>
     </div>
-    <br />
-    <figure>
-        <div class="carousel"> 
-            <div id="myCarousel" class="carousel slide" data-ride="carousel">
-              <!-- posiciones(indicador dónde se encuentra la img) -->
-              <ol class="carousel-indicators">
-                <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-                <li data-target="#myCarousel" data-slide-to="1"></li>
-                <li data-target="#myCarousel" data-slide-to="2"></li>
-              </ol>
-          
-              <!-- img q rotar -->
-              <div class="carousel-inner">
-                <div class="item active">
-                  <img src="peq_cami1.png">
-                </div>
-                <div class="item">
-                  <img src="peq_cami2.png">
-                </div>
-                <div class="item">
-                  <img src="peq_cami3.png">
-                </div>
-              </div>
-          
-              <!-- controles -->
-              <a class="left carousel-control" href="#myCarousel" data-slide="prev">
-                <span class="glyphicon glyphicon-chevron-left"></span>
-                <span class="sr-only">Previous</span>
-              </a>
-              <a class="right carousel-control" href="#myCarousel" data-slide="next">
-                <span class="glyphicon glyphicon-chevron-right"></span>
-                <span class="sr-only">Next</span>
-              </a>
+
+    <div class="contenedor-carruseles">
+        <!-- Carrusel 1 -->
+        <div class="carrusel" id="carrusel1">
+            <div class="carrusel-contenedor">
+                <img src="images/producto_1_1.png" alt="Imagen 1" class="imagen">
+                <img src="images/producto_1_2.png" alt="Imagen 2" class="imagen">
+                <img src="images/producto_1_3.png" alt="Imagen 3" class="imagen">
             </div>
-          </div>
-    </figure>
-    <br/>
-    <p>Sacai</p>
-    <p>30 €</p>
+            <button class="prev" onclick="moverCarrusel(-1, 'carrusel1')">&#10094;</button>
+            <button class="next" onclick="moverCarrusel(1, 'carrusel1')">&#10095;</button>
+            <a class="nombre" href="producto_1.html" target="_self">Camiseta Sacai</a>
+            <div class="precio">30 €</div>
+        </div>
+
+        <!-- Carrusel 2 -->
+        <div class="carrusel" id="carrusel2">
+            <div class="carrusel-contenedor">
+                <img src="images/producto_2_1.png" alt="Imagen 1" class="imagen">
+                <img src="images/producto_2_2.png" alt="Imagen 2" class="imagen">
+                <img src="images/producto_2_3.png" alt="Imagen 3" class="imagen">
+            </div>
+            <button class="prev" onclick="moverCarrusel(-1, 'carrusel2')">&#10094;</button>
+            <button class="next" onclick="moverCarrusel(1, 'carrusel2')">&#10095;</button>
+            <a class="nombre" href="producto_2.html" target="_self">Camiseta Corales</a>
+            <div class="precio">30 €</div>
+        </div>
+
+        <!-- Carrusel 3 -->
+        <div class="carrusel" id="carrusel3">
+            <div class="carrusel-contenedor">
+                <img src="images/producto_3_1.png" alt="Imagen 1" class="imagen">
+                <img src="images/producto_3_2.png" alt="Imagen 2" class="imagen">
+                <img src="images/producto_3_3.png" alt="Imagen 3" class="imagen">
+            </div>
+            <button class="prev" onclick="moverCarrusel(-1, 'carrusel3')">&#10094;</button>
+            <button class="next" onclick="moverCarrusel(1, 'carrusel3')">&#10095;</button>
+            <a class="nombre" href="producto_3.html" target="_self">Camiseta Flores</a>
+            <div class="precio">30 €</div>
+        </div>
+    </div>
+
 </body>
+
 </html>

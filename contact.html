@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lenguaje=”es”>
+
+<head>
+    <title>En ca la flores | CONTACTO</title>
+    <meta charset=”utf-8”>
+    <meta name=”description” content=”moda”>
+    <meta name=”keywords” content=”contacto”>
+    <meta name=”author” content=”carmen varela”>
+    <link rel="stylesheet" href="CSS/styles.css">
+    <script src="JS/scripts.js"></script>
+</head>
+
+<body>
+    <div class="cabeza">
+        <div class="cabeza-left">
+            <button class="c" onclick="visita('services.html')">Shop ▼</button>
+            <button class="c" onclick="visita('gallery.html')">Lookbooks</button>
+            <button class="c" onclick="visita('about.html')">About us</button>
+        </div>
+        <div class="cesta">
+            <button class="d" onclick="visita('shopping_list.html')"><img src="images/lista_compra.png"></button>
+        </div>
+    </div>
+    <div>
+        <h1>CONTACTO</h1>
+        <h2>Por favor, antes de contactarnos consulte nuestras preguntas frecuentes <a href="questions.html"
+                target="_blank">aquí</a></h2>
+    </div>
+    <div>
+        <form action="mailto:encalaflorestienda@gmail.com" method=”post” enctype="text/plain">
+            <!-- mailto es para que lo envie a ese correo y el "text/plain" con lo que le indicamos que se trata de un archivo de texto plano. 
+             Tengamos en cuenta que no podemos enviar archivos adjuntos.  -->
+            <input type=”text” name="Nombre_contacto">
+            <input type=”text” name="telefono_contacto">
+            <br>
+            <input type=”text” name="correo_electronico_contacto">
+            <br>
+            <textarea name="comentario_contacto">
+                Comentario:
+            </textarea>
+            <br>
+            <input class="a" type="submit">
+        </form>
+    </div>
+</body>
+
+</html>

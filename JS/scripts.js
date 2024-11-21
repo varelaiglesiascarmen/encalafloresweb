@@ -1,114 +1,168 @@
-function visita(sitio) {
-    window.location.href = sitio;
-}
+(function() {
+    function visita(sitio) {
+        window.location.href = sitio;
+    }
+    window.visita = visita;
 
-function anadir() {
-    numAnadidos++;
-    document.getElementById('anadidos').textContent = numAnadidos;
-}
-
-// Carrusel
-
-document.addEventListener("DOMContentLoaded", function () {
-    // Función para mover el carrusel
-    function moverCarrusel(direccion, carruselId) {
-        // Asegurarse de que el carrusel exista en el DOM
-        const carrusel = document.getElementById(carruselId);
-        if (!carrusel) {
-            console.error(`No se encontró el carrusel con id: ${carruselId}`);
-            return;
-        }
-
-        const imagenes = carrusel.querySelectorAll('.imagen');
-        const totalImagenes = imagenes.length;
-        let index = parseInt(carrusel.getAttribute('data-index')) || 0; // Obtener el índice actual desde el atributo data
-
-        // Actualizar el índice basado en la dirección (prev o next)
-        index += direccion;
-
-        // Si el índice es menor que 0, lo ajustamos a la última imagen
-        if (index < 0) {
-            index = totalImagenes - 1;
-        }
-        // Si el índice es mayor o igual al número total de imágenes, lo ajustamos a la primera imagen
-        else if (index >= totalImagenes) {
-            index = 0;
-        }
-
-        // Guardar el nuevo índice
-        carrusel.setAttribute('data-index', index);
-
-        // Mover el carrusel con el nuevo índice
-        const contenedor = carrusel.querySelector('.carrusel-contenedor');
-        if (contenedor) {
-            contenedor.style.transform = `translateX(-${index * 100}%)`;
-        } else {
-            console.error(`No se encontró el contenedor en el carrusel con id: ${carruselId}`);
+    function anadir() {
+        if (typeof numAnadidos !== 'undefined') {
+            numAnadidos++;
+            const anadidosEl = document.getElementById('anadidos');
+            if (anadidosEl) {
+                anadidosEl.textContent = numAnadidos;
+            }
         }
     }
+    window.anadir = anadir;
 
-    // Asigna la función a los botones después de que el DOM haya cargado
-    window.moverCarrusel = moverCarrusel;
-});
+    let tallaSeleccionada = null;
 
+    document.addEventListener("DOMContentLoaded", function () {
+        // Carrusel
+        function moverCarrusel(direccion, carruselId) {
+            const carrusel = document.getElementById(carruselId);
+            if (!carrusel) {
+                console.error(`No se encontró el carrusel con id: ${carruselId}`);
+                return;
+            }
 
-document.addEventListener("DOMContentLoaded", function () {
-    // guia tallas
-    const buttonEl = document.getElementById("guia_tabla")
-    const tallasEl = document.getElementById("guia_tabla_interactiva")
-    const closeEl = document.getElementById("close")
-    buttonEl.addEventListener("click", (e) => {
-        tallasEl.style.display = "flex";
-    })
+            const imagenes = carrusel.querySelectorAll('.imagen');
+            const totalImagenes = imagenes.length;
+            let index = parseInt(carrusel.getAttribute('data-index')) || 0;
 
-    closeEl.addEventListener("click", (e) => {
-        tallasEl.style.display = "none";
-    })
+            index += direccion;
+            if (index < 0) {
+                index = totalImagenes - 1;
+            } else if (index >= totalImagenes) {
+                index = 0;
+            }
 
-    //contador productos
-    const decrementButton = document.getElementById('resta');
-    const incrementButton = document.getElementById('suma');
-    const quantityInput = document.getElementById('cantidad');
-    decrementButton.addEventListener('click', () => {
-        let currentValue = parseInt(quantityInput.value);
-        if (currentValue > 1) { quantityInput.value = currentValue - 1; }
+            carrusel.setAttribute('data-index', index);
+            const contenedor = carrusel.querySelector('.carrusel-contenedor');
+            if (contenedor) {
+                contenedor.style.transform = `translateX(-${index * 100}%)`;
+            } else {
+                console.error(`No se encontró el contenedor en el carrusel con id: ${carruselId}`);
+            }
+        }
+        window.moverCarrusel = moverCarrusel;
+
+        // guia tallas
+        const buttonEl = document.getElementById("guia_tabla");
+        const tallasEl = document.getElementById("guia_tabla_interactiva");
+        const closeEl = document.getElementById("close");
+        if (buttonEl && tallasEl && closeEl) {
+            buttonEl.addEventListener("click", () => {
+                tallasEl.style.display = "flex";
+            });
+            closeEl.addEventListener("click", () => {
+                tallasEl.style.display = "none";
+            });
+        }
+
+        // Existing code
+        const bloque = document.querySelectorAll('.bloque');
+        const pregunta = document.querySelectorAll('.pregunta');
+        if (bloque.length && pregunta.length) {
+            pregunta.forEach((cadapregunta, i) => {
+                pregunta[i].addEventListener('click', () => {
+                    bloque.forEach((cadabloque, i) => {
+                        bloque[i].classList.remove('activo');
+                    });
+                    bloque[i].classList.add('activo');
+                });
+            });
+        }
+
+        // function seleccionarTalla(talla, event) {
+        //     event.preventDefault();  // Prevenir que el botón cause una acción predeterminada
+        
+        //     // Limpiar selección de otros botones
+        //     var botones_a_borrar = document.querySelectorAll('button[class="talla_seleccionada"]');
+        //     for (var i = 0; i < botones_a_borrar.length; i++) {
+        //         botones_a_borrar[i].classList.remove('talla_seleccionada');
+        //         botones_a_borrar[i].classList.add('talla');
+        //     }
+        
+        //     // Agregar la clase "talla_seleccionada" al botón que se ha clickeado
+        //     const element = document.getElementById("bt_" + talla);
+        //     if (element) {
+        //         element.classList.remove('talla');
+        //         element.classList.add('talla_seleccionada');
+        //     }
+        // }
+
+        function seleccionarTalla(talla, event) {
+            event.preventDefault();  // Prevenir que el botón cause una acción predeterminada
+        
+            // Limpiar la selección de otros botones y radios
+            var botones_a_borrar = document.querySelectorAll('button[class="talla_seleccionada"]');
+            // var radios_a_borrar = document.querySelectorAll('input[type="radio"]:checked');
+            for (var i = 0; i < botones_a_borrar.length; i++) {
+                botones_a_borrar[i].classList.remove('talla_seleccionada');
+                botones_a_borrar[i].classList.add('talla');
+            }
+
+            // Desmarcar todos los radios de talla
+            const radios = document.querySelectorAll('input[name="talla"]');
+            radios.forEach(radio => {
+                radio.checked = false;
+            });
+        
+            // Marcar el radio correspondiente
+            const radioButton = document.getElementById(talla);
+            radioButton.checked = true;
+
+            // for (var i = 0; i < radios_a_borrar.length; i++) {
+            //     radios_a_borrar[i].checked = false;  // Desmarcar los radios
+            // }
+        
+            // // Marcar el radio correspondiente como seleccionado
+            // const radioElement = document.getElementById(talla);
+            // if (radioElement) {
+            //     radioElement.checked = true;
+            // }
+        
+            // Agregar la clase "talla_seleccionada" al botón de talla
+            const buttonElement = document.getElementById("bt_" + talla);
+            if (buttonElement) {
+                buttonElement.classList.remove('talla');
+                buttonElement.classList.add('talla_seleccionada');
+            }
+        }
+
+        window.seleccionarTalla = seleccionarTalla;
+
+        // Botones de añadir y quitar cantidad de productos
+        function increment() {
+            var cantidad = document.getElementById('cantidad');
+            cantidad.value = parseInt(cantidad.value) + 1;
+        }
+        window.increment = increment;
+
+        function decrement() {
+            var cantidad = document.getElementById('cantidad');
+            if (cantidad.value > 1) {
+                cantidad.value = parseInt(cantidad.value) - 1;
+            }
+        }
+        window.decrement = decrement;
+
+        
     });
-    incrementButton.addEventListener('click', () => {
-        let currentValue = parseInt(quantityInput.value);
-        quantityInput.value = currentValue + 1;
-    });
 
-    function seleccionarTalla(button, talla) {
-        // Desmarcar el botón previamente seleccionado
-        const botones = document.querySelectorAll('button.talla_seleccion');
-        botones.forEach(boton => {
-            boton.classList.remove('talla_seleccion');
-            boton.classList.add('talla');
-        });
-
-        // Marcar el botón seleccionado
-        button.classList.remove('talla');
-        button.classList.add('talla_seleccion');
-
-        // Seleccionar el radio button correspondiente
-        const radioButton = document.getElementById('talla_' + talla);
-        radioButton.checked = true;
-    }
-
-    window.seleccionarTalla = seleccionarTalla;
-});
-
-//acordeon de preguntas frecuentes
-const bloque = document.querySelectorAll('.bloque')
-const pregunta = document.querySelectorAll('.pregunta')
-// cuando haga click en pregunta, quita la clase en todos los bloques y añade la clase.activo al bloque con la posicion de pregunta
-
-pregunta.forEach(cadapregunta, i) => {
-    pregunta[i].addEventListener('click', () => {
-
-        bloque.forEach((cadabloque, i) => {
-            bloque[i].classList.remove('activo')
-        })
-        bloque[i].classList.add('activo')
-    })
-}
+    // document.addEventListener("DOMContentLoaded", function () {
+    //     const bloque = document.querySelectorAll('.bloque');
+    //     const pregunta = document.querySelectorAll('.pregunta');
+    //     if (bloque.length && pregunta.length) {
+    //         pregunta.forEach((cadapregunta, i) => {
+    //             pregunta[i].addEventListener('click', () => {
+    //                 bloque.forEach((cadabloque, i) => {
+    //                     bloque[i].classList.remove('activo');
+    //                 });
+    //                 bloque[i].classList.add('activo');
+    //             });
+    //         });
+    //     }
+    // });
+})();

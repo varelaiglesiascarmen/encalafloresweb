@@ -222,7 +222,7 @@
     border: 0px solid rgb(97, 97, 97);
 }
 
-.talla_seleccion {
+.talla_seleccionada {
     padding: 14px 20px;
     border-radius: 0px;
     background-color: rgba(27, 26, 26, 0.8);
@@ -315,6 +315,10 @@
     text-align: left;
     color: #000000;
     font-size: x-large;
+}
+.campo_oculto {
+    color: #ffffff;
+    border: #ffffff;
 }
 
 /*https://www.youtube.com/watch?v=XGyTnLoGOX0  acordeon*/

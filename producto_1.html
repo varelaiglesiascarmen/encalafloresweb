@@ -1,90 +1,162 @@
 <!DOCTYPE html>
 <html lenguaje=”es”>
 
-<head>
-    <title>En ca la flores | Camiseta SACAI</title>
-    <meta charset=”utf-8”>
-    <meta name=”description” content=”moda”>
-    <meta name=”keywords” content=””>
-    <meta name=”author” content=”carmen_varela”>
-    <link rel="stylesheet" href="CSS/styles.css">
-    <script src="JS/scripts.js"></script>
+    <head>
+        <title>En ca la flores | Camiseta SACAI</title>
+        <meta charset=”utf-8”>
+        <meta name=”description” content=”camiseta,sacai”>
+        <meta name=”keywords” content=”porducto,camiseta,sacai,unisex,moda”>
+        <meta name=”author” content=”carmen_varela”>
+        <link rel="stylesheet" href="CSS/styles.css">
+        <link rel="icon" href="images/ventana_logo.png">
+        <script src="JS/scripts.js"></script>
 
-<body>
-    <!-- encabezado menu -->
-    <div class="cabeza">
-        <div class="cabeza-left">
-            <button class="c" onclick="visita('services.html')">Shop ▼</button>
-            <button class="c" onclick="visita('gallery.html')">Lookbooks</button>
-            <button class="c" onclick="visita('about.html')">About us</button>
-        </div>
-        <div class="cesta">
-            <button class="d" onclick="visita('shopping_list.html')"><img src="images/lista_compra.png"></button>
-        </div>
-    </div>
-
-    <!-- cuerpo -->
-    <div class="cuerpo_producto">
-        <!-- imagenes -->
-        <div class="imagenes_productos">
-            <img src="images/producto_1_index.png">
-            <img src="images/producto_1_2.png">
-        </div>
-        <!-- tablas -->
-        <div id="tabla_anadir_Carrito_Tallas" class="tablas_tallas">
-            <strong class="nombre_producto">Camiseta SACAI</strong>
-            <form id="anadir_producto_carrito">
-                <input type="text" id="nombre_producto" value="Cami_SACAI" readonly hidden>
-                <!-- readonly para que nadie edite la variable (value) y hidden pa q no se vea -->
-                <table>
-                    <caption class="precio_producto" id="precio_producto">30€ | Camiseta Unisex</caption>
-                    <input type="number" id="precio_producto" value="30" readonly hidden>
-                    <tbody>
-                        <td>
-                            <div class="contador_productos">
-                                <button id="resta">-</button>
-                                <input type="number" id="cantidad" value="1" min="1">
-                                <button id="suma">+</button>
-                            </div>
-                        </td>
-                        <td><button class="carrito" onclick="anadir('shopping_list')">Agregar al carrito</button></td>
-                    </tbody>
-                </table>
-                <br><br>
-                <table>
-                    <thead>Talla :</thead>
-                    <tbody>
-                        <tr>
-                            <td><button class="talla" onclick="seleccionarTalla(this, 'XS')">XS</button></td>
-                            <td><button class="talla" onclick="seleccionarTalla(this, 'S')">S</button></td>
-                            <td><button class="talla" onclick="seleccionarTalla(this, 'M')">M</button></td>
-                            <td><button class="talla" onclick="seleccionarTalla(this, 'L')">L</button></td>
-                            <td><button class="talla" onclick="seleccionarTalla(this, 'XL')">XL</button></td>
-                            <td><button class="talla" onclick="seleccionarTalla(this, 'XXL')">XXL</button></td>
-                        </tr>
-                        <!-- los imput son para q guarden los datos de nombre, talla, y cntidad ppero no están visibles -->
-                        <input type="radio" name="talla" id="talla_XS" value="XS" hidden>
-                        <input type="radio" name="talla" id="talla_S" value="S" hidden>
-                        <input type="radio" name="talla" id="talla_M" value="M" hidden>
-                        <input type="radio" name="talla" id="talla_L" value="L" hidden>
-                        <input type="radio" name="talla" id="talla_XL" value="XL" hidden>
-                        <input type="radio" name="talla" id="talla_XXL" value="XXL" hidden>
-                    </tbody>
-                </table>
-            </form>
-
-            <br />
-            <button id="guia_tabla" class="button_talla">Guía de tallas</button>
-
-        </div>
-        <div id="guia_tabla_interactiva" class="container_guia_tallas" style="display: none;">
-            <div class="container_img">
-                <img style="border-radius: 8px;" src="images/guia_talla.png" alt="Guía de tallas">
-                <div class="close" id="close"></div>
+        <body>
+            <!-- cabecera menu -->
+            <div class="cabeza">
+                <div class="cabeza-left">
+                    <button class="c"
+                        onclick="visita('services.html')">Shop</button>
+                    <button class="c"
+                        onclick="visita('gallery.html')">Lookbooks</button>
+                    <button class="c" onclick="visita('about.html')">About
+                        us</button>
+                </div>
+                <div class="cesta">
+                    <button class="d"
+                        onclick="visita('shopping_list.html')"><img
+                            src="images/lista_compra.png"></button>
+                </div>
             </div>
-        </div>
-    </div>
+            <!-- cuerpo -->
+            <div class="cuerpo_producto">
+                <!-- imagenes -->
+                <div class="imagenes_productos">
+                    <img src="images/producto_1_index.png">
+                    <img src="images/producto_1_2.png">
+                </div>
+                <!-- tablas -->
+                <div id="tabla_anadir_Carrito_Tallas" class="tablas_tallas">
+                    <strong class="nombre_producto">Camiseta SACAI</strong>
+                    <form id="anadir_producto_carrito">
+                        <input type="text" id="nombre_producto"
+                            value="Cami_SACAI" readonly hidden>
+                        <!-- readonly para que nadie edite la variable (value) y hidden pa q no se vea -->
+                        <table>
+                            <caption class="precio_producto"
+                                id="precio_producto">30€ | Camiseta
+                                Unisex</caption>
+                            <input type="number" id="precio_producto" value="30"
+                                readonly hidden>
+                            <tbody>
+                                <td>
+                                    <div class="contador_productos">
+                                        <button id="resta">-</button>
+                                        <input type="number" id="cantidad"
+                                            value="1" min="1">
+                                        <button id="suma">+</button>
+                                    </div>
+                                </td>
+                                <td><button class="carrito"
+                                        onclick="anadir('shopping_list')">Agregar
+                                        al carrito</button></td>
+                            </tbody>
+                        </table>
+                        <br><br>
+                        <table>
+                            <thead>Talla :</thead>
+                            <tbody>
+                                <tr>
+                                    <td><button class="talla"
+                                            onclick="seleccionarTalla(this, 'XS')">XS</button></td>
+                                    <td><button class="talla"
+                                            onclick="seleccionarTalla(this, 'S')">S</button></td>
+                                    <td><button class="talla"
+                                            onclick="seleccionarTalla(this, 'M')">M</button></td>
+                                    <td><button class="talla"
+                                            onclick="seleccionarTalla(this, 'L')">L</button></td>
+                                    <td><button class="talla"
+                                            onclick="seleccionarTalla(this, 'XL')">XL</button></td>
+                                    <td><button class="talla"
+                                            onclick="seleccionarTalla(this, 'XXL')">XXL</button></td>
+                                </tr>
+                                <!-- los imput son para q guarden los datos de nombre, talla, y cntidad ppero no están visibles -->
+                                <input type="radio" name="talla" id="talla_XS"
+                                    value="XS" hidden>
+                                <input type="radio" name="talla" id="talla_S"
+                                    value="S" hidden>
+                                <input type="radio" name="talla" id="talla_M"
+                                    value="M" hidden>
+                                <input type="radio" name="talla" id="talla_L"
+                                    value="L" hidden>
+                                <input type="radio" name="talla" id="talla_XL"
+                                    value="XL" hidden>
+                                <input type="radio" name="talla" id="talla_XXL"
+                                    value="XXL" hidden>
+                            </tbody>
+                        </table>
+                    </form>
+                    <br />
+                    <!-- guia de tallas -->
+                    <button id="guia_tabla" class="button_talla">Guía de
+                        tallas</button>
+                </div>
+                <div id="guia_tabla_interactiva" class="container_guia_tallas"
+                    style="display: none;">
+                    <div class="container_img">
+                        <img style="border-radius: 8px;"
+                            src="images/guia_talla.png" alt="Guía de tallas">
+                        <div class="close" id="close"></div>
+                    </div>
+                </div>
+            </div>
+            <!-- lista compra desplegable -->
+            <div class="cuerpo_carrito_negro">
+                
+                <div class="cuerpo_carrito">
+                    <div class="carrito_general">
+                        <b>Carrito</b>
+                        <button class="carrito_x">X</button>
+                        <!-- quiero que cierre cuando le das a la X -->
+                        <hr>
+                        <img src="images/carritoVacio.png" alt="carrito vacio">
+                        <div class="carrito_button">
+                            <a href="services.html">
+                                <button class="carrito">Empieza a comprar</button>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </body>
+        <!-- pie de pagina-->
+        <footer>
+            <div class="pie">
+                <div class="pie-left">
+                    <!-- columna rrss -->
+                    <div class="rrss">
+                        <h1>En ca la Flores </h1>
+                        <a href="about.html">Sobre nosotros</a>
+                        <p>Siguenos en nuestras redes sociales @encalaflores
+                            para
+                            estar al tanto de todas las novedades</p>
+                        <a href>#EncalaFloresCommunity</a>
+                    </div>
+                    <!-- columna ayuda -->
+                    <div class="help">
+                        <h1>Ayuda</h1>
+                        <a href="contact.html">Contacto</a>
+                        <a href="questions.html">Preguntas frecuentes</a>
+                        <a href="repayment.html">Cambios y devoluciones</a>
+                    </div>
+                    <!-- columna politicas -->
+                    <div class="politicas">
+                        <h1>Políticas</h1>
+                        <a href="shippingpolicy_costs.html">Política y gastos de
+                            envíos</a>
+                    </div>
+                </div>
+            </div>
+        </footer>
 
-</body>
-
-</html>
+    </html>

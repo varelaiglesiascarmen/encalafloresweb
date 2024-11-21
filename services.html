@@ -1,70 +1,136 @@
 <!DOCTYPE html>
 <html lenguaje=”es”>
 
-<head>
-    <title>En ca la flores | SHOP</title>
-    <meta charset=”utf-8”>
-    <meta name=”description” content=”moda”>
-    <meta name=”keywords” content=””>
-    <meta name=”author” content=”carmen varela”>
-    <link rel="stylesheet" href="CSS/styles.css">
-    <script src="JS/scripts.js"></script>
+    <head>
+        <title>En ca la flores | SHOP</title>
+        <meta charset=”utf-8”>
+        <meta name=”description” content=”moda,productos”>
+        <meta name=”keywords” content=”moda,productos”>
+        <meta name=”author” content=”carmen varela”>
+        <link rel="stylesheet" href="CSS/styles.css">
+        <link rel="icon" href="images/ventana_logo.png">
+        <script src="JS/scripts.js"></script>
+    </head>
 
-</head>
-
-<body>
-    <div class="cabeza">
-        <div class="cabeza-left">
-            <button class="c" onclick="visita('6shop.html')">Shop ▼</button>
-            <button class="c" onclick="visita('3lookbooks.html')">Lookbooks</button>
-            <button class="c" onclick="visita('about.html')">About us</button>
-        </div>
-        <div class="cesta">
-            <button class="d" onclick="visita('11lista.html')"><img src="images/lista_compra.png"></button>
-        </div>
-    </div>
-
-    <div class="contenedor-carruseles">
-        <!-- Carrusel 1 -->
-        <div class="carrusel" id="carrusel1">
-            <div class="carrusel-contenedor">
-                <img src="images/producto_1_1.png" alt="Imagen 1" class="imagen">
-                <img src="images/producto_1_2.png" alt="Imagen 2" class="imagen">
-                <img src="images/producto_1_3.png" alt="Imagen 3" class="imagen">
+    <body>
+        <!-- cabecera menu -->
+        <div class="cabeza">
+            <div class="cabeza-left">
+                <button class="c" onclick="visita('6shop.html')">Shop ▼</button>
+                <button class="c"
+                    onclick="visita('3lookbooks.html')">Lookbooks</button>
+                <button class="c" onclick="visita('about.html')">About
+                    us</button>
             </div>
-            <button class="prev" onclick="moverCarrusel(-1, 'carrusel1')">&#10094;</button>
-            <button class="next" onclick="moverCarrusel(1, 'carrusel1')">&#10095;</button>
-            <a class="nombre" href="producto_1.html" target="_self">Camiseta Sacai</a>
-            <div class="precio">30 €</div>
-        </div>
-
-        <!-- Carrusel 2 -->
-        <div class="carrusel" id="carrusel2">
-            <div class="carrusel-contenedor">
-                <img src="images/producto_2_1.png" alt="Imagen 1" class="imagen">
-                <img src="images/producto_2_2.png" alt="Imagen 2" class="imagen">
-                <img src="images/producto_2_3.png" alt="Imagen 3" class="imagen">
+            <div class="cesta">
+                <button class="d" onclick="visita('11lista.html')"><img
+                        src="images/lista_compra.png"></button>
             </div>
-            <button class="prev" onclick="moverCarrusel(-1, 'carrusel2')">&#10094;</button>
-            <button class="next" onclick="moverCarrusel(1, 'carrusel2')">&#10095;</button>
-            <a class="nombre" href="producto_2.html" target="_self">Camiseta Corales</a>
-            <div class="precio">30 €</div>
         </div>
-
-        <!-- Carrusel 3 -->
-        <div class="carrusel" id="carrusel3">
-            <div class="carrusel-contenedor">
-                <img src="images/producto_3_1.png" alt="Imagen 1" class="imagen">
-                <img src="images/producto_3_2.png" alt="Imagen 2" class="imagen">
-                <img src="images/producto_3_3.png" alt="Imagen 3" class="imagen">
+        <!-- cuerpo -->
+        <div class="contenedor-carruseles">
+            <!-- Carrusel producto 1 -->
+            <div class="carrusel" id="carrusel1">
+                <div class="carrusel-contenedor">
+                    <img src="images/producto_1_1.png" alt="Imagen 1"
+                        class="imagen">
+                    <img src="images/producto_1_2.png" alt="Imagen 2"
+                        class="imagen">
+                    <img src="images/producto_1_3.png" alt="Imagen 3"
+                        class="imagen">
+                </div>
+                <button class="prev"
+                    onclick="moverCarrusel(-1, 'carrusel1')">&#10094;</button>
+                <button class="next"
+                    onclick="moverCarrusel(1, 'carrusel1')">&#10095;</button>
+                <a class="nombre" href="producto_1.html" target="_self">Camiseta
+                    Sacai</a>
+                <div class="precio">30 €</div>
             </div>
-            <button class="prev" onclick="moverCarrusel(-1, 'carrusel3')">&#10094;</button>
-            <button class="next" onclick="moverCarrusel(1, 'carrusel3')">&#10095;</button>
-            <a class="nombre" href="producto_3.html" target="_self">Camiseta Flores</a>
-            <div class="precio">30 €</div>
+
+            <!-- Carrusel producto 2 -->
+            <div class="carrusel" id="carrusel2">
+                <div class="carrusel-contenedor">
+                    <img src="images/producto_2_1.png" alt="Imagen 1"
+                        class="imagen">
+                    <img src="images/producto_2_2.png" alt="Imagen 2"
+                        class="imagen">
+                    <img src="images/producto_2_3.png" alt="Imagen 3"
+                        class="imagen">
+                </div>
+                <button class="prev"
+                    onclick="moverCarrusel(-1, 'carrusel2')">&#10094;</button>
+                <button class="next"
+                    onclick="moverCarrusel(1, 'carrusel2')">&#10095;</button>
+                <a class="nombre" href="producto_2.html" target="_self">Camiseta
+                    Corales</a>
+                <div class="precio">30 €</div>
+            </div>
+
+            <!-- Carrusel producto 3 -->
+            <div class="carrusel" id="carrusel3">
+                <div class="carrusel-contenedor">
+                    <img src="images/producto_3_1.png" alt="Imagen 1"
+                        class="imagen">
+                    <img src="images/producto_3_2.png" alt="Imagen 2"
+                        class="imagen">
+                    <img src="images/producto_3_3.png" alt="Imagen 3"
+                        class="imagen">
+                </div>
+                <button class="prev"
+                    onclick="moverCarrusel(-1, 'carrusel3')">&#10094;</button>
+                <button class="next"
+                    onclick="moverCarrusel(1, 'carrusel3')">&#10095;</button>
+                <a class="nombre" href="producto_3.html" target="_self">Camiseta
+                    Flores</a>
+                <div class="precio">30 €</div>
+            </div>
         </div>
-    </div>
-
-</body>
-
+        <!-- lista compra desplegable -->
+        <div class="cuerpo_carrito_negro">
+                
+            <div class="cuerpo_carrito">
+                <div class="carrito_general">
+                    <b>Carrito</b>
+                    <button class="carrito_x">X</button>
+                    <!-- quiero que cierre cuando le das a la X -->
+                    <hr>
+                    <img src="images/carritoVacio.png" alt="carrito vacio">
+                    <div class="carrito_button">
+                        <a href="services.html">
+                            <button class="carrito">Empieza a comprar</button>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+    <!-- pie de pagina-->
+    <footer>
+        <div class="pie">
+            <div class="pie-left">
+                <!-- columna rrss -->
+                <div class="rrss">
+                    <h1>En ca la Flores </h1>
+                    <a href="about.html">Sobre nosotros</a>
+                    <p>Siguenos en nuestras redes sociales @encalaflores para
+                        estar al tanto de todas las novedades</p>
+                    <a href>#EncalaFloresCommunity</a>
+                </div>
+                <!-- columna ayuda -->
+                <div class="help">
+                    <h1>Ayuda</h1>
+                    <a href="contact.html">Contacto</a>
+                    <a href="questions.html">Preguntas frecuentes</a>
+                    <a href="repayment.html">Cambios y devoluciones</a>
+                </div>
+                <!-- columna politicas -->
+                <div class="politicas">
+                    <h1>Políticas</h1>
+                    <a href="shippingpolicy_costs.html">Política y gastos de
+                        envíos</a>
+                </div>
+            </div>
+        </div>
+    </footer>
 </html>

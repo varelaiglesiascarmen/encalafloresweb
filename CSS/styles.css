@@ -323,20 +323,72 @@
 padding: 2mm;
 max-width: 120em;
 }
-.acordeon.bloque {
+.acordeon_bloque {
 margin: 0 0 1em;
 padding: 1em;
 }
-.acordeon.pregunta{
+.acordeon_pregunta{
 margin: 0 0 1em;
 padding: 1em;
 }
-.acordeon.respuesta{
+.acordeon_respuesta{
 padding: 0em;
 height: 0;
 overflow: hidden;
 transition: all 5s ease; /* para dar interacción a esa lista*/
 }
-.acordeon.bloque.activo.respuesta{
+.acordeon_bloque_activo_respuesta{
     height: 4em;
+}
+
+.cuerpo_carrito_negro {
+    background: rgb(0, 0, 0,0.5);
+    height: 100vw;
+    width: 100vw;
+}
+.carrito_general{
+    position: absolute;
+    background-color: #ffffff;
+    right: 0px;
+    width: 300px;
+    padding: 10px;
+}
+
+.carrito_x{
+    position: absolute;
+    right: 10px;
+    border: 0;
+    color: #000000;
+    font-weight: bold;
+}
+
+.carrito_button{
+text-align: center;
+}
+
+.carrito{
+    width: 200px;
+    font-size: 12px;
+    padding: 10px 50px;
+    background-color: rgba(0, 0, 0);
+    color: rgb(255, 255, 255);
+}
+.pie{
+    background-color: #000000;
+    position: relative;
+    color: #ffffff;
+    height: 100%;
+    width: 100%;
+}
+.pie-left {
+
+}
+.rrss {
+
+}
+.help {
+
+}
+.politicas{
+
 }

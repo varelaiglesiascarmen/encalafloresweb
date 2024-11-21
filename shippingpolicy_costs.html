@@ -1,55 +1,117 @@
 <!DOCTYPE html>
 <html lenguaje=”es”>
 
-<head>
-    <title>En ca la flores | POLÍTICA Y GASTOS DE ENVÍOS</title>
-    <meta charset=”utf-8”>
-    <meta name=”description” content=”moda”>
-    <meta name=”keywords” content=”contacto”>
-    <meta name=”author” content=”carmen varela”>
-    <link rel="stylesheet" href="CSS/styles.css">
-    <script src="JS/scripts.js"></script>
-</head>
+    <head>
+        <title>En ca la flores | POLÍTICA Y GASTOS DE ENVÍOS</title>
+        <meta charset=”utf-8”>
+        <meta name=”description” content=”politica,gastos,envios”>
+        <meta name=”keywords” content=”politica,gastos,envios”>
+        <meta name=”author” content=”carmen varela”>
+        <link rel="stylesheet" href="CSS/styles.css">
+        <link rel="icon" href="images/ventana_logo.png">
+        <script src="JS/scripts.js"></script>
+    </head>
 
-<body>
-    <div class="cabeza">
-        <div class="cabeza-left">
-            <button class="c" onclick="visita('services.html')">Shop ▼</button>
-            <button class="c" onclick="visita('gallery.html')">Lookbooks</button>
-            <button class="c" onclick="visita('about.html')">About us</button>
+    <body>
+        <!-- cabecera menu -->
+        <div class="cabeza">
+            <div class="cabeza-left">
+                <button class="c" onclick="visita('services.html')">Shop
+                    ▼</button>
+                <button class="c"
+                    onclick="visita('gallery.html')">Lookbooks</button>
+                <button class="c" onclick="visita('about.html')">About
+                    us</button>
+            </div>
+            <div class="cesta">
+                <button class="d" onclick="visita('shopping_list.html')"><img
+                        src="images/lista_compra.png"></button>
+            </div>
         </div>
-        <div class="cesta">
-            <button class="d" onclick="visita('shopping_list.html')"><img src="images/lista_compra.png"></button>
+        <!-- cuerpo -->
+        <div>
+            <h1 class="nombre_producto">POLÍTICA ENVÍOS</h1>
+            <p>
+                Nada más realizar la compra recibirás un email de confirmación y
+                nuestro equipo se pondrá manos a la obra
+                para que recibas tu pedido lo antes posible. Si transcurrido el
+                tiempo indicado a continuación para cada
+                país no has recibido tu pedido, por favor contacta con nosotros
+                (encalaflorestienda@gmail.com) indicándonos
+                tu número de pedido y revisaremos tu historial de pedidos para
+                encontrar una solución lo antes posible.
+                Recibirás un correo electrónico con el seguimiento de tu pedido
+                para que puedas estar al tanto del estado de
+                tu envío en cualquier momento.
+            </p>
+            <p>
+                En ca la Flores no será responsable de los errores de entrega
+                producidos cuando la dirección de entrega
+                introducida por el Usuario en el formulario de pedido no se
+                corresponda con la realidad o cuando se haya
+                omitido algún
+                dato.
+            </p>
+            <p>
+                Si desea cancelar un pedido, deberá comunicárselo a En ca la
+                Flores mediante correo electrónico a
+                encalaflorestienda@gmail.com. En ca la Flores procederá a
+                reembolsar el importe del pedido incluidos los
+                gastos de envío siempre y cuando el pedido no haya sido
+                preparado y cargado por nuestro almacén logístico en
+                los camiones de
+                mensajería, en cuyo caso no se reembolsará.
+            </p>
+            <p>Solo se permiten envíos dentro de la península ibérica.</p>
+            <h1 class="nombre_producto">GASTOS DE ENVÍO</h1>
+            <p>Península Ibérica (España y Portugal)</p>
+            <p>Estándar 24/48h días laborables - 3,90 € | Gratuito > 70 €</p>
         </div>
-    </div>
-    <div>
-        <h1 class="nombre_producto">POLÍTICA ENVÍOS</h1>
-        <p>
-            Nada más realizar la compra recibirás un email de confirmación y nuestro equipo se pondrá manos a la obra
-            para que recibas tu pedido lo antes posible. Si transcurrido el tiempo indicado a continuación para cada
-            país no has recibido tu pedido, por favor contacta con nosotros (encalaflorestienda@gmail.com) indicándonos
-            tu número de pedido y revisaremos tu historial de pedidos para encontrar una solución lo antes posible.
-            Recibirás un correo electrónico con el seguimiento de tu pedido para que puedas estar al tanto del estado de
-            tu envío en cualquier momento.
-        </p>
-        <p>
-            En ca la Flores no será responsable de los errores de entrega producidos cuando la dirección de entrega
-            introducida por el Usuario en el formulario de pedido no se corresponda con la realidad o cuando se haya
-            omitido algún
-            dato.
-        </p>
-        <p>
-            Si desea cancelar un pedido, deberá comunicárselo a En ca la Flores mediante correo electrónico a
-            encalaflorestienda@gmail.com. En ca la Flores procederá a reembolsar el importe del pedido incluidos los
-            gastos de envío siempre y cuando el pedido no haya sido preparado y cargado por nuestro almacén logístico en
-            los camiones de
-            mensajería, en cuyo caso no se reembolsará.
-        </p>
-        <p>Solo se permiten envíos dentro de la península ibérica.</p>
-        <h1 class="nombre_producto">GASTOS DE ENVÍO</h1>
-        <p>Península Ibérica (España y Portugal)</p>
-        <p>Estándar 24/48h días laborables - 3,90 € | Gratuito > 70 €</p>
-    </div>
-</body>
-
+        <!-- lista compra desplegable -->
+        <div class="cuerpo_carrito_negro">
+                
+            <div class="cuerpo_carrito">
+                <div class="carrito_general">
+                    <b>Carrito</b>
+                    <button class="carrito_x">X</button>
+                    <!-- quiero que cierre cuando le das a la X -->
+                    <hr>
+                    <img src="images/carritoVacio.png" alt="carrito vacio">
+                    <div class="carrito_button">
+                        <a href="services.html">
+                            <button class="carrito">Empieza a comprar</button>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+    <!-- pie de pagina-->
+    <footer>
+        <div class="pie">
+            <div class="pie-left">
+                <!-- columna rrss -->
+                <div class="rrss">
+                    <h1>En ca la Flores </h1>
+                    <a href="about.html">Sobre nosotros</a>
+                    <p>Siguenos en nuestras redes sociales @encalaflores para
+                        estar al tanto de todas las novedades</p>
+                    <a href>#EncalaFloresCommunity</a>
+                </div>
+                <!-- columna ayuda -->
+                <div class="help">
+                    <h1>Ayuda</h1>
+                    <a href="contact.html">Contacto</a>
+                    <a href="questions.html">Preguntas frecuentes</a>
+                    <a href="repayment.html">Cambios y devoluciones</a>
+                </div>
+                <!-- columna politicas -->
+                <div class="politicas">
+                    <h1>Políticas</h1>
+                    <a href="shippingpolicy_costs.html">Política y gastos de
+                        envíos</a>
+                </div>
+            </div>
+        </div>
+    </footer>
 </html>

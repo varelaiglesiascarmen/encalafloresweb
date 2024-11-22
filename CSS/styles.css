@@ -29,7 +29,7 @@ a {
 }
 
 .menu {
-    background-image: url("../images/patio_menu.webp");
+    background-image: url("../images/foto_menu.jpg");
     background-size: cover;
     background-repeat: no-repeat;
     text-align: center;
@@ -104,7 +104,6 @@ a {
 
 .nombre {
     color: #780f0f;
-    /*text-shadow: 2px 2px 3px rgb(179, 144, 144);*/
     text-align: center;
 }
 
@@ -455,7 +454,11 @@ footer{
     color: #000000;
 }
 
-.formulario_contacto{
+.formulario_contacto_padre{
+
+}
+
+.formulario_contacto_hijo{
 display: flex;
 flex-direction: column;
 align-items: center;
@@ -497,6 +500,7 @@ width: 100%;
 }
 
 .foto_about_patio{
+
     width: 70%;
     height: auto;
 }
@@ -518,6 +522,41 @@ width: 100%;
     display: inline-block;
     margin-bottom: 10px;
 }
+
 .main_txt {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px;
+}
+
+.main_repayment_padre{
+    display: flex;               
+    justify-content: flex-start;  
+    align-items: flex-start;      
+    gap: 20px; 
+}
+
+.main_repayment_hijo {
+    display: flex;                
+    flex-direction: column;      
+    justify-content: center;      
+    align-items: center;          
+    text-align: center;           
+    padding: 20px;                
+    width: 100%; 
+}
+
+.main_figure{
+    width: 500px;
+    height: auto;
+    margin-left: auto;
+}
+
+.videos_colab {
+
+}
+
+.noticias{
 
 }

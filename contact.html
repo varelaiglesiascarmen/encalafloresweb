@@ -25,26 +25,28 @@
             </div>
         </div>
         <!-- cuerpo -->
-        <div>
-            <h1>CONTACTO</h1>
-            <h2>Por favor, antes de contactarnos consulte nuestras preguntas
-                frecuentes <a href="questions.html" target="_blank">aquí</a></h2>
-        </div>
-        <div>
-        <!-- formulario -->
-            <form action="mailto:encalaflorestienda@gmail.com" method="post" enctype="text/plain">
-        <!-- mailto es para que lo envie a ese correo y el "text/plain" con lo que le indicamos que se trata de 
-         un archivo de texto plano. Tengamos en cuenta que no podemos enviar archivos adjuntos.  -->
-                <input type="text" name="Nombre_contacto">
-                <input type="text" name="telefono_contacto">
-                <br>
-                <input type="text" name="correo_electronico_contacto">
-                <br>
-                <textarea name="comentario_contacto">Comentario:</textarea>
-                <br>
-                <input class="a" type="submit">
-            </form>
-        </div>
+         <main>
+            <div>
+                <h1 class="nombre_producto">CONTACTO</h1>
+                <h2>Por favor, antes de contactarnos consulte nuestras
+                <a href="questions.html" target="_blank" class="link_txt">preguntas frecuentes</a></h2>
+            </div>
+            <div class="formulario_contacto">
+            <!-- formulario -->
+                <form action="mailto:encalaflorestienda@gmail.com" method="post" enctype="text/plain">
+            <!-- mailto es para que lo envie a ese correo y el "text/plain" con lo que le indicamos que se trata de 
+             un archivo de texto plano. Tengamos en cuenta que no podemos enviar archivos adjuntos.  -->
+                    <input type="text" name="Nombre_contacto" value="Nombre" class="button_contacto">
+                    <input type="texto" name="telefono_contacto" value="Número de teléfono" class="button_contacto">
+                    <br> <br>
+                    <input type="email" name="correo_electronico_contacto" value="e-mail" class="button_contacto_email">
+                    <br><br>
+                    <input type="text" name="comentario_contacto" value="Introduzca su petición" class="button_contacto_comentario">
+                    <br> <br> <br>
+                    <input class="enviar_negro" type="submit">
+                </form>
+            </div>
+         </main>
         <!-- pie de pagina-->
     <footer>
         <div class="pie">
@@ -64,9 +66,9 @@
                 <div class="columna_footer">
                     <h1>Ayuda</h1>
                     <a href="contact.html" class="link_pie">Contacto</a>
-                    <br>
+                    <br><br>
                     <a href="questions.html" class="link_pie">Preguntas frecuentes</a>
-                    <br>
+                    <br><br>
                     <a href="repayment.html" class="link_pie">Cambios y devoluciones</a>
                 </div>
                 <!-- columna politicas -->

@@ -317,6 +317,53 @@ a {
     text-shadow: 2px 2px 5px rgb(0, 0, 0, 0.5);
 }
 
+.cuerpo {
+    position: relative;
+    width: 100%;
+    background-image: url("../images/ventana_logo.png");
+    background-color: rgba(255, 255, 255, 0.7); /* Add a semi-transparent white background */
+    background-blend-mode: lighten; /* Blend the background image with the color */
+}
+
+.formulario_envio {
+    display: flex;
+    justify-content: center;
+    margin: 1em 0;
+    width: 100%;
+}
+
+.resumen-envio {
+    background-color: #ffffff;
+    border: 1px solid #000000;
+    padding: 12px;
+}
+
+.formulario_envio input {
+    
+    color: rgb(0, 0, 0, 0.5);
+    padding: 12px 12px;
+    border: 2px solid rgb(0, 0, 0, 0.7);
+    text-align: center;
+    margin: 0px;
+    width: 160%;
+}
+
+.label {
+    color: #000000;
+    font-size: 20px;
+    text-align: right;
+    margin-right: 10px;    
+}
+
+.formulario_envio h2 {
+    color: rgb(175, 21, 21);
+    text-shadow: 2px 2px 5px rgb(0, 0, 0, 0.5);
+}
+
+.formulario_envio h4 {
+    color: rgb(175, 21, 21);
+    text-shadow: 2px 2px 5px rgb(0, 0, 0, 0.5);
+}
 .precio_producto {
     text-align: left;
     color: #000000;
@@ -357,6 +404,23 @@ a {
     height: 4em;
 }
 
+.botonera {
+    display: flex;
+    justify-content: center;
+    margin: 1em 0;
+    width: 100%;
+}
+
+.pagar {
+    border-radius: 8px;
+    font-size: 25px;
+    background-color: #892727;
+    color: #ffffff;
+    border: none;
+    width: 400px;
+
+}
+
 .carrito_general {
     position: absolute;
     background-color: #ffffff;
@@ -376,15 +440,16 @@ a {
 .carrito_button {
     text-align: center;
 }
- .enviar_negro{
+
+.enviar_negro {
     width: 200px;
     font-size: 12px;
     padding: 10px 50px;
     background-color: rgba(0, 0, 0);
     color: rgb(255, 255, 255);
-    display: block; 
+    display: block;
     margin: 0 auto;
- }
+}
 
 .carrito {
     width: 200px;
@@ -396,7 +461,7 @@ a {
 
 .factura {
     position: relative;
-    width: 80%; 
+    width: 80%;
     margin: 0 auto;
     border: none;
 }
@@ -409,99 +474,111 @@ a {
     border-top-left-radius: 8px;
     border-top-right-radius: 8px;
 }
+
 .factura td {
     border: 1px solid black;
     padding: 8px;
     text-align: left;
-}
-.factura td {
-    padding: 8px;
-    text-align: left;
+    background-color: #ffffff;
 }
 
-footer{
-    display: flex; /* Establece el contenedor como un flexbox */
-    justify-content: space-between;  /* Alinea los elementos de manera distribuida */ 
+.total-factura {
+    font-weight: bold;
+    
+}
+
+footer {
+    display: flex;
+    /* Establece el contenedor como un flexbox */
+    justify-content: space-between;
+    /* Alinea los elementos de manera distribuida */
     padding: 20px;
     background-color: rgb(0, 0, 0, 0.9);
     color: #ffffff;
 }
 
 .pie {
-    display: flex; /* Flexbox en el footer */
-    justify-content: space-between;  /* Espaciado entre columnas */
-    width: 100%; 
+    display: flex;
+    /* Flexbox en el footer */
+    justify-content: space-between;
+    /* Espaciado entre columnas */
+    width: 100%;
 }
 
 .pie-left {
-    display: flex; /* Flexbox para las columnas internas */
+    display: flex;
+    /* Flexbox para las columnas internas */
     justify-content: space-between;
-    width: 100%;  
-}
-    
-.columna_footer {
-    flex: 1; /* Cada columna ocupa un espacio igual */
-    padding: 10px;
-    display: block; /* Hace que los enlaces se apilen verticalmente */
-    margin-bottom: 5px; /* Espaciado entre enlaces */
-    max-width: 100%;            /* Asegura que las imágenes no se desborden */
+    width: 100%;
 }
 
-.link_pie{
+.columna_footer {
+    flex: 1;
+    /* Cada columna ocupa un espacio igual */
+    padding: 10px;
+    display: block;
+    /* Hace que los enlaces se apilen verticalmente */
+    margin-bottom: 5px;
+    /* Espaciado entre enlaces */
+    max-width: 100%;
+    /* Asegura que las imágenes no se desborden */
+}
+
+.link_pie {
     color: #ffffff;
 }
 
-.link_txt{
+.link_txt {
     color: #000000;
 }
 
-.formulario_contacto{
-display: flex;
-flex-direction: column;
-align-items: center;
-justify-content: center;
-margin: 0;
-padding: 20px;
-width: 80%;
-max-width: 600px;
+.formulario_contacto {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    padding: 20px;
+    width: 80%;
+    max-width: 600px;
 }
 
-.button_contacto{
+.button_contacto {
     color: rgb(0, 0, 0, 0.5);
     padding: 12px 50px;
     border: 2px solid rgb(0, 0, 0, 0.7);
 }
 
-.button_contacto_email{
+.button_contacto_email {
     color: rgb(0, 0, 0, 0.5);
     padding: 12px 192px;
     border: 2px solid rgb(0, 0, 0, 0.7);
 }
 
-.button_contacto_comentario{
+.button_contacto_comentario {
     color: rgb(0, 0, 0, 0.5);
     padding: 130px 192px;
     border: 2px solid rgb(0, 0, 0, 0.7);
 }
 
-.main_about{
-display: flex;
-justify-content: space-between;
-align-items: center;
-padding: 0px;
+.main_about {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px;
 }
 
-.foto_about{
-margin: 0;
-width: 100%;
+.foto_about {
+    margin: 0;
+    width: 100%;
 }
 
-.foto_about_patio{
+.foto_about_patio {
     width: 70%;
     height: auto;
 }
 
-.padre_texto_about{
+.padre_texto_about {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -509,15 +586,15 @@ width: 100%;
     align-items: center;
 }
 
-.hijo_texto_about{
+.hijo_texto_about {
     max-width: 600px;
     text-align: center;
 }
 
-.hijo_texto_about a { /*botones*/
+.hijo_texto_about a {
+    /*botones*/
     display: inline-block;
     margin-bottom: 10px;
 }
-.main_txt {
 
-}
+.main_txt {}

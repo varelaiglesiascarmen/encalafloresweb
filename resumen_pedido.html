@@ -2,7 +2,7 @@
 <html lang="es">
 
 <head>
-    <title>En ca la flores | CARRITO</title>
+    <title>En ca la flores | Confirmación del pedido</title>
     <meta charset="utf-8">
     <meta name="description" content="moda">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,7 +13,7 @@
     <script src="JS/scripts.js"></script>
 </head>
 
-<body onload="displayCart()">
+<body onload="displayResumenPedido()">
     <!-- encabezado menu -->
     <div class="cabeza">
         <nav class="cabeza-left">
@@ -25,34 +25,45 @@
             <a href="shopping_list.html"><img src="images/lista_compra.png"></a>
         </div>
     </div>
-    <main>
-        <!-- cart.html -->
-        <h1 class="nombre_producto">Carrito de la compra</h1>
-        <div class="factura">
-            <table id="cart-table" class="factura">
-                <thead>
-                    <tr>
-                        <th>Producto</th>
-                        <th>Precio</th>
-                        <th>Cantidad</th>
-                        <th>Total</th>
-                    </tr>
-                </thead>
-                <tbody id="cart-items">
-                    <!-- Aquí se pintarán los productos del carrito -->
+    <div class="cuerpo">
+        <main>
+            <!-- cart.html -->
+            <h1 class="nombre_producto">Gracias por tu pedido</h1>
+            <div class="factura">
+                <table id="cart-table" class="factura">
+                    <thead>
+                        <tr>
+                            <th>Producto</th>
+                            <th>Precio</th>
+                            <th>Cantidad</th>
+                            <th>Total</th>
+                        </tr>
+                    </thead>
+                    <tbody id="cart-items">
+                        <!-- Aquí se pintarán los productos del carrito -->
 
-                </tbody>
-            </table>
-            <div class="total-factura">
-                <h3 id="total-price"></h3>
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <td colspan="5" class="total-factura" id="total-price" style="text-align: right;"></td>
+                        </tr>
+                    </tfoot>
+                </table>
             </div>
-        </div>
-    </main>
-    <div class="botonera">
-        <a href="services.html"><button class="a">Seguir comprando</button></a>&nbsp;&nbsp;
-        <button class="a" onclick="clearCart()">Vaciar el Carrito</button>&nbsp;&nbsp;
-        <a href="shopping_send.html"><button class="pagar">Terminar pedido y envío</button></a>
-        
+            <div class="formulario_envio">
+                    <div class="resumen-envio">
+                        <h2>Resumen de Envío</h2>
+                        <h4>Pago contrareembolso</h4>
+                        <p><b> En un plazo máximo de 7 días el pedido se enviará a la siguiente dirección: </b></p>
+                        <p>Nombre: <span id="resumen-nombre"></span></p>
+                        <p>Email: <span id="resumen-correo"></span></p>
+                        <p>Dirección: <span id="resumen-direccion"></span></p>
+                        <p>Ciudad: <span id="resumen-ciudad"></span></p>
+                        <p>Código Postal: <span id="resumen-codigo-postal"></span></p>
+                        <p>Teléfono: <span id="resumen-telefono"></span></p>
+                    </div>
+            </div>
+        </main>
     </div>
     <!-- pie de pagina-->
     <footer>
@@ -73,9 +84,9 @@
                 <div class="columna_footer">
                     <h1>Ayuda</h1>
                     <a href="contact.html" class="link_pie">Contacto</a>
-                    <br>
+                    <br><br>
                     <a href="questions.html" class="link_pie">Preguntas frecuentes</a>
-                    <br>
+                    <br><br>
                     <a href="repayment.html" class="link_pie">Cambios y devoluciones</a>
                 </div>
                 <!-- columna politicas -->

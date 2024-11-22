@@ -2,7 +2,7 @@
 <html lang="es">
 
 <head>
-    <title>En ca la flores | CARRITO</title>
+    <title>En ca la flores | Tramitar pedido</title>
     <meta charset="utf-8">
     <meta name="description" content="moda">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -25,34 +25,51 @@
             <a href="shopping_list.html"><img src="images/lista_compra.png"></a>
         </div>
     </div>
-    <main>
-        <!-- cart.html -->
-        <h1 class="nombre_producto">Carrito de la compra</h1>
-        <div class="factura">
-            <table id="cart-table" class="factura">
-                <thead>
-                    <tr>
-                        <th>Producto</th>
-                        <th>Precio</th>
-                        <th>Cantidad</th>
-                        <th>Total</th>
-                    </tr>
-                </thead>
-                <tbody id="cart-items">
-                    <!-- Aquí se pintarán los productos del carrito -->
+    <div class="cuerpo">
+        <main>
+            <!-- cart.html -->
+            <h1 class="nombre_producto">Detalles del pedido</h1>
+            <div class="factura">
+                <table id="cart-table" class="factura">
+                    <thead>
+                        <tr>
+                            <th>Producto</th>
+                            <th>Precio</th>
+                            <th>Cantidad</th>
+                            <th>Total</th>
+                        </tr>
+                    </thead>
+                    <tbody id="cart-items">
+                        <!-- Aquí se pintarán los productos del carrito -->
 
-                </tbody>
-            </table>
-            <div class="total-factura">
-                <h3 id="total-price"></h3>
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <td colspan="5" class="total-factura" id="total-price" style="text-align: right;"></td>
+                        </tr>
+                    </tfoot>
+                </table>
             </div>
-        </div>
-    </main>
+            <div class="formulario_envio">
+                <form action="resumen_pedido.html" method="GET">
+                    <h2>Dirección de Envío</h2>
+                    <input type="text" id="nombre" name="nombre" value="Nombre" required onclick="this.value=''"><br />
+                    <input type="email" name="correo_electronico" value="e-mail" onclick="this.value=''"><br />
+                    <input type="text" id="direccion" name="direccion" value="Dirección" required
+                        onclick="this.value=''"><br />
+                    <input type="text" id="ciudad" name="ciudad" value="Ciudad" required onclick="this.value=''"><br />
+                    <input type="text" id="codigo_postal" name="codigo_postal" value="codigo postal" required
+                        onclick="this.value=''"><br />
+                    <input type="tel" id="telefono" name="telefono" value="Teléfono contacto" required
+                        onclick="this.value=''"><br />
+
+            </div>
+        </main>
+    </div>
     <div class="botonera">
-        <a href="services.html"><button class="a">Seguir comprando</button></a>&nbsp;&nbsp;
-        <button class="a" onclick="clearCart()">Vaciar el Carrito</button>&nbsp;&nbsp;
-        <a href="shopping_send.html"><button class="pagar">Terminar pedido y envío</button></a>
-        
+        <button type="submit" class="pagar">Terminar pedido y envío</button>
+        </form>
+
     </div>
     <!-- pie de pagina-->
     <footer>

@@ -14,12 +14,12 @@
 
     document.addEventListener("DOMContentLoaded", function () {
         // Con este script se vuelve al principal al hacer click en la cabeza 
-        document.querySelector('.cabeza').addEventListener('click', function(event) {
+        document.querySelector('.cabeza').addEventListener('click', function (event) {
             if (!event.target.closest('a')) {
                 window.location.href = 'principal.html';
             }
         });
-        
+
         // Carrusel
         function moverCarrusel(direccion, carruselId) {
             const carrusel = document.getElementById(carruselId);
@@ -162,102 +162,57 @@
         // Función para mostrar el carrito (en cart.html)
 
 
-// Función para mostrar el carrito
-function displayCart() {
-    // Obtener el carrito desde localStorage
-    let cart = JSON.parse(localStorage.getItem('cart')) || [];
-    let cartTableBody = document.getElementById('cart-items');
-    let totalPriceElement = document.getElementById('total-price');
-    let total = 0;
-  
-    // Si el carrito está vacío
-    if (cart.length === 0) {
-      cartTableBody.innerHTML = '<tr><td colspan="4">No hay productos en el carrito.</td></tr>';
-      totalPriceElement.innerHTML = '';
-      return;
-    }
-  
-    // Limpiar el contenido actual de la tabla
-    cartTableBody.innerHTML = '';
-  
-    // Iterar sobre los productos en el carrito y agregar filas a la tabla
-    cart.forEach(item => {
-      // Calcular el total por producto
-      let productTotal = item.price * item.quantity;
-      total += productTotal;
-  
-      // Crear una fila de tabla por cada producto
-      let row = document.createElement('tr');
-      row.innerHTML = `
+        // Función para mostrar el carrito
+        function displayCart() {
+            // Obtener el carrito desde localStorage
+            let cart = JSON.parse(localStorage.getItem('cart')) || [];
+            let cartTableBody = document.getElementById('cart-items');
+            let totalPriceElement = document.getElementById('total-price');
+            let total = 0;
+
+            // Si el carrito está vacío
+            if (cart.length === 0) {
+                cartTableBody.innerHTML = '<tr><td colspan="4">No hay productos en el carrito.</td></tr>';
+                totalPriceElement.innerHTML = '';
+                return;
+            }
+
+            // Limpiar el contenido actual de la tabla
+            cartTableBody.innerHTML = '';
+
+            // Iterar sobre los productos en el carrito y agregar filas a la tabla
+            cart.forEach(item => {
+                // Calcular el total por producto
+                let productTotal = item.price * item.quantity;
+                total += productTotal;
+
+                // Crear una fila de tabla por cada producto
+                let row = document.createElement('tr');
+                row.innerHTML = `
         <td>${item.name}</td>
         <td>$${item.price}</td>
         <td>${item.quantity}</td>
         <td>$${productTotal}</td>
       `;
-      cartTableBody.appendChild(row);
-    });
-  
-    // Mostrar el total final
-    totalPriceElement.innerHTML = `Total: $${total}`;
-  }
-  
+                cartTableBody.appendChild(row);
+            });
 
-
-
-
-
-        // function displayCart() {
-        //     let cart = JSON.parse(localStorage.getItem('cart')) || [];
-        //     let cartContainer = document.getElementById('cart-items');
-        //     let total = 0;
-        //     cartContainer.innerHTML = "<p>" + cart.length + " productos en el carrito.</p>";
-        //     // Si el carrito está vacío
-        //     if (cart.length === 0) {
-        //         cartContainer.innerHTML = "<h2>Carrito vacío</h2>";
-        //         return;
-        //     }
-
-        //     // Mostrar los productos del carrito
-        //     cartContainer.innerHTML += `
-        //         <table class='factura'>
-        //             <thead>
-        //                 <tr>
-        //                     <th>Producto</th>
-        //                     <th>Talla</th>
-        //                     <th>Precio</th>
-        //                     <th>Cantidad</th>
-        //                     <th>Precio Total</th>
-        //                 </tr>
-        //             </thead>
-        //             <tbody>
-        //     `;
-
-        //     let cartHTML = '';
-        //     cart.forEach(item => {
-        //         const itemTotal = item.price * item.quantity;
-        //         cartHTML += `
-        //             <tr>
-        //                 <td class='fila'>${item.name}</td>
-        //                 <td class='fila'>${item.talla}</td>
-        //                 <td class='fila'>${item.price} €</td>
-        //                 <td class='fila'>${item.quantity}</td>
-        //                 <td class='fila'>${itemTotal} €</td>
-        //             </tr>
-        //         `;
-        //         total += itemTotal;
-        //     });
-        //     cartContainer.innerHTML += cartHTML;
-
-        //     cartContainer.innerHTML += `
-        //             </tbody>
-        //         </table>
-        //     `;
-
-        //     // Mostrar el total
-        //     cartContainer.innerHTML += `<h3>Total: ${total} €</h3>`;
-        // }
-
+            // Mostrar el total final
+            totalPriceElement.innerHTML = `Total: $${total}`;
+        }
         window.displayCart = displayCart;
+
+        function displayResumenPedido() {
+            const urlParams = new URLSearchParams(window.location.search);
+            displayCart();
+            document.getElementById('resumen-nombre').textContent = urlParams.get('nombre') || '';
+            document.getElementById('resumen-correo').textContent = urlParams.get('correo_electronico') || '';
+            document.getElementById('resumen-direccion').textContent = urlParams.get('direccion') || '';
+            document.getElementById('resumen-ciudad').textContent = urlParams.get('ciudad') || '';
+            document.getElementById('resumen-codigo-postal').textContent = urlParams.get('codigo_postal') || '';
+            document.getElementById('resumen-telefono').textContent = urlParams.get('telefono') || '';
+        }
+        window.displayResumenPedido = displayResumenPedido;
 
         function clearCart() {
             localStorage.removeItem('cart');

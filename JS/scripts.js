@@ -13,6 +13,13 @@
     let tallaSeleccionada = null;
 
     document.addEventListener("DOMContentLoaded", function () {
+        // Con este script se vuelve al principal al hacer click en la cabeza 
+        document.querySelector('.cabeza').addEventListener('click', function(event) {
+            if (!event.target.closest('a')) {
+                window.location.href = 'principal.html';
+            }
+        });
+        
         // Carrusel
         function moverCarrusel(direccion, carruselId) {
             const carrusel = document.getElementById(carruselId);

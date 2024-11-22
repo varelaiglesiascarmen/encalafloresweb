@@ -5,16 +5,15 @@
     <title>En ca la flores | Camiseta FLORES</title>
     <meta charset=”utf-8”>
     <meta name=”description” content=”moda”>
-    <meta name=”keywords” content=””>
+    <meta name=”keywords” content=producto,camiseta,corales,unisex,moda”>
     <meta name=”author” content=”carmen varela”>
     <link rel="stylesheet" href="CSS/styles.css">
     <link rel="icon" href="images/ventana_logo.png">
     <script src="JS/scripts.js"></script>
-</script>
 <body>
     <div class="cabeza">
         <div class="cabeza-left">
-            <button class="c" onclick="visita('services.html')">Shop ▼</button>
+            <button class="c" onclick="visita('services.html')">Shop</button>
             <button class="c" onclick="visita('gallery.html')">Lookbooks</button>
             <button class="c" onclick="visita('about.html')">About us</button>
         </div>
@@ -22,31 +21,91 @@
             <button class="d" onclick="visita('shopping_list.html')"><img src="images/lista_compra.png"></button>
         </div>
     </div>
-    <figure>
-        <img src="images/producto_1.2.png">
-        <img src="images/producto_1.1.png">
-    </figure>
-    <h1>Camiseta CORALES</h1>
-    <h3>30€ | Camiseta Unisex</h2>
-    <button class="carrito" onclick="anadir('shopping_list')">Agregar al carrito</button>
-    <!-- lista compra desplegable -->
-    <div class="cuerpo_carrito_negro">
-                
-        <div class="cuerpo_carrito">
-            <div class="carrito_general">
-                <b>Carrito</b>
-                <button class="carrito_x">X</button>
-                <!-- quiero que cierre cuando le das a la X -->
-                <hr>
-                <img src="images/carritoVacio.png" alt="carrito vacio">
-                <div class="carrito_button">
-                    <a href="services.html">
-                        <button class="carrito">Empieza a comprar</button>
-                    </a>
-                </div>
+
+     <!-- cuerpo -->
+     <div class="cuerpo_producto">
+        <!-- imagenes -->    
+        <div class="imagenes_productos">
+            <img src="images/producto_3_1.png">
+            <img src="images/producto_3_2.png">
+        </div>
+        <!-- tablas -->
+        <div id="tabla_anadir_Carrito_Tallas" class="tablas_tallas">
+            <strong class="nombre_producto">Camiseta FLORES</strong>
+            <form id="anadir_producto_carrito" action="pagina_prueba.html" method="GET">
+                <input type="text" id="nombre_producto" name="nombre_producto" value="Cami_FLORES" readonly class="campo_oculto">
+                <!-- readonly para que nadie edite la variable (value) y hidden pa q no se vea -->
+                <table>
+                    <caption class="precio_producto">30€ | Camiseta Unisex</caption>
+                    <input type="number" id="precio_producto" name="precio_producto" value="30" readonly class="campo_oculto">
+                    <tbody>
+                        <td>
+                            <div class="contador_productos">
+                                <button id="resta" type="button" onclick="decrement()">-</button>
+                                <input type="number" id="cantidad" name="cantidad" value="1" min="1">
+                                <button id="suma" type="button" onclick="increment()">+</button>
+                            </div>
+                        </td>
+                        <td><button class="carrito" type="submit">Agregar al carrito</button></td>
+                    </tbody>
+                </table>
+                <br><br>
+                <table>
+                    <thead>Talla :</thead>
+                    <tbody>
+                        <tr>
+                            <td>
+                                <label>
+                                    <input type="radio" name="talla" id="XS" value="XS" hidden>
+                                    <button id="bt_XS" class="talla" onclick="seleccionarTalla('XS', event)">XS</button>
+                                </label>
+                            </td>
+                            <td>
+                                <label>
+                                    <input type="radio" name="talla" id="S" value="S" hidden>
+                                    <button id="bt_S" class="talla" onclick="seleccionarTalla('S', event)">S</button>
+                                </label>
+                            </td>
+                            <td>
+                                <label>
+                                    <input type="radio" name="talla" id="M" value="M" hidden>
+                                    <button id="bt_M" class="talla" onclick="seleccionarTalla('M', event)">M</button>
+                                </label>
+                            </td>
+                            <td>
+                                <label>
+                                    <input type="radio" name="talla" id="L" value="L" hidden>
+                                    <button id="bt_L" class="talla" onclick="seleccionarTalla('L', event)">L</button>
+                                </label>
+                            </td>
+                            <td>
+                                <label>
+                                    <input type="radio" name="talla" id="XL" value="XL" hidden>
+                                    <button id="bt_XL" class="talla" onclick="seleccionarTalla('XL', event)">XL</button>
+                                </label>
+                            </td>
+                            <td>
+                                <label>
+                                    <input type="radio" name="talla" id="XXL" value="XXL" hidden>
+                                    <button id="bt_XXL" class="talla"
+                                        onclick="seleccionarTalla('XXL', event)">XXL</button>
+                                </label>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </form>
+            <br />
+            <button id="guia_tabla" class="button_talla">Guía de tallas</button>
+
+        </div>
+        <div id="guia_tabla_interactiva" class="container_guia_tallas" style="display: none;">
+            <div class="container_img">
+                <img style="border-radius: 8px;" src="images/guia_talla.png" alt="Guía de tallas">
+                <div class="close" id="close"></div>
             </div>
         </div>
-    </div>    
+    </div> 
 </body>
 <footer>
     <div class="pie">

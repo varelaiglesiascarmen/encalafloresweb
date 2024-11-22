@@ -2,6 +2,10 @@
     font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
 
+a {
+    text-decoration: none;
+}
+
 .skip {
     border-radius: 8px;
     position: absolute;

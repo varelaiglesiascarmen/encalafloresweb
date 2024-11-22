@@ -1,9 +1,4 @@
-(function() {
-    function visita(sitio) {
-        window.location.href = sitio;
-    }
-    window.visita = visita;
-
+(function () {
     function anadir() {
         if (typeof numAnadidos !== 'undefined') {
             numAnadidos++;
@@ -74,27 +69,10 @@
             });
         }
 
-        // function seleccionarTalla(talla, event) {
-        //     event.preventDefault();  // Prevenir que el botón cause una acción predeterminada
-        
-        //     // Limpiar selección de otros botones
-        //     var botones_a_borrar = document.querySelectorAll('button[class="talla_seleccionada"]');
-        //     for (var i = 0; i < botones_a_borrar.length; i++) {
-        //         botones_a_borrar[i].classList.remove('talla_seleccionada');
-        //         botones_a_borrar[i].classList.add('talla');
-        //     }
-        
-        //     // Agregar la clase "talla_seleccionada" al botón que se ha clickeado
-        //     const element = document.getElementById("bt_" + talla);
-        //     if (element) {
-        //         element.classList.remove('talla');
-        //         element.classList.add('talla_seleccionada');
-        //     }
-        // }
 
         function seleccionarTalla(talla, event) {
             event.preventDefault();  // Prevenir que el botón cause una acción predeterminada
-        
+
             // Limpiar la selección de otros botones y radios
             var botones_a_borrar = document.querySelectorAll('button[class="talla_seleccionada"]');
             // var radios_a_borrar = document.querySelectorAll('input[type="radio"]:checked');
@@ -108,21 +86,11 @@
             radios.forEach(radio => {
                 radio.checked = false;
             });
-        
+
             // Marcar el radio correspondiente
             const radioButton = document.getElementById(talla);
             radioButton.checked = true;
 
-            // for (var i = 0; i < radios_a_borrar.length; i++) {
-            //     radios_a_borrar[i].checked = false;  // Desmarcar los radios
-            // }
-        
-            // // Marcar el radio correspondiente como seleccionado
-            // const radioElement = document.getElementById(talla);
-            // if (radioElement) {
-            //     radioElement.checked = true;
-            // }
-        
             // Agregar la clase "talla_seleccionada" al botón de talla
             const buttonElement = document.getElementById("bt_" + talla);
             if (buttonElement) {
@@ -148,21 +116,103 @@
         }
         window.decrement = decrement;
 
-        
-    });
+        // Carrito de compras
 
-    // document.addEventListener("DOMContentLoaded", function () {
-    //     const bloque = document.querySelectorAll('.bloque');
-    //     const pregunta = document.querySelectorAll('.pregunta');
-    //     if (bloque.length && pregunta.length) {
-    //         pregunta.forEach((cadapregunta, i) => {
-    //             pregunta[i].addEventListener('click', () => {
-    //                 bloque.forEach((cadabloque, i) => {
-    //                     bloque[i].classList.remove('activo');
-    //                 });
-    //                 bloque[i].classList.add('activo');
-    //             });
+        // Función para agregar productos al carrito
+        function addToCart(id, name, price, quantity, talla) {
+            // Recuperar el carrito existente del localStorage
+            let cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+            // Verificar si el producto ya está en el carrito
+            let productIndex = cart.findIndex(item => item.id === id);
+
+            if (productIndex !== -1) {
+                // Si ya está, incrementar la cantidad
+                cart[productIndex].quantity += quantity;
+            } else {
+                // Si no está, añadir el producto con cantidad 1
+                cart.push({ id, name, price, quantity, talla });
+            }
+
+            // Guardar el carrito actualizado en localStorage
+            localStorage.setItem('cart', JSON.stringify(cart));
+            alert(`${cart.length}, ${name} ha sido añadido al carrito.`);
+        }
+        window.addToCart = addToCart;
+
+        function getSelectedTalla() {
+            const radios = document.getElementsByName('talla');
+            for (const radio of radios) {
+                if (radio.checked) {
+                    return radio.value;
+                }
+            }
+            return 0; // un valor por defecto si ninguna talla está seleccionada
+        }
+        window.getSelectedTalla = getSelectedTalla;
+        
+        // Mostrar el carrito al cargar la página
+        // Función para mostrar el carrito (en cart.html)
+        function displayCart() {
+            let cart = JSON.parse(localStorage.getItem('cart')) || [];
+            let cartContainer = document.getElementById('cart-items');
+            let total = 0;
+            cartContainer.innerHTML = "<p>"+cart.length+" productos en el carrito.</p>";
+            // Si el carrito está vacío
+            if (cart.length === 0) {
+                cartContainer.innerHTML = '<p>Carrito vac&iacuote;o</p>';
+                return;
+            }
+
+            // Mostrar los productos del carrito
+            cart.forEach(item => {
+    //             cartContainer.innerHTML += `
+    //     <div>
+    //       <p>${item.name} - Talla:${item.talla} ${item.price} € x ${item.quantity}</p>
+    //     </div>
+    //   `;
+    //             total += item.price * item.quantity;
     //         });
-    //     }
-    // });
+            cartContainer.innerHTML += `
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Producto</th>
+                            <th>Talla</th>
+                            <th>Precio</th>
+                            <th>Cantidad</th>
+                            <th>Precio Total</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+            `;
+
+            cart.forEach(item => {
+                const itemTotal = item.price * item.quantity;
+                cartContainer.innerHTML += `
+                    <tr>
+                        <td>${item.name}</td>
+                        <td>${item.talla}</td>
+                        <td>${item.price} €</td>
+                        <td>${item.quantity}</td>
+                        <td>${itemTotal} €</td>
+                    </tr>
+                `;
+                total += itemTotal;
+            });
+
+            cartContainer.innerHTML += `
+                    </tbody>
+                </table>
+            `;
+
+            // Mostrar el total
+            cartContainer.innerHTML += `<h3>Total: ${total} €</h3>`;
+
+            // Mostrar el total
+            cartContainer.innerHTML += `<h3>Total: $${total}</h3>`;
+        }
+
+        window.displayCart = displayCart;
+    });
 })();

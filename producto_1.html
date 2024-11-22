@@ -3,24 +3,23 @@
 
 <head>
     <title>En ca la flores | Camiseta SACAI</title>
-    <meta charset=”utf-8”>
+    <meta charset=utf-8”>
     <meta name=”description” content=”camiseta,sacai”>
-    <meta name=”keywords” content="producto,camiseta,sacai,unisex,moda”>
+    <meta name=”keywords” content=producto,camiseta,sacai,unisex,moda”>
     <meta name=”author” content=”carmen_varela”>
-    <link rel=" stylesheet" href="CSS/styles.css">
+    <link rel="stylesheet" href="CSS/styles.css">
     <link rel="icon" href="images/ventana_logo.png">
     <script src="JS/scripts.js"></script>
-
 <body>
     <!-- encabezado menu -->
     <div class="cabeza">
-        <div class="cabeza-left">
-            <button class="c" onclick="visita('services.html')">Shop</button>
-            <button class="c" onclick="visita('gallery.html')">Lookbooks</button>
-            <button class="c" onclick="visita('about.html')">About us</button>
-        </div>
+        <nav class="cabeza-left">
+            <a href="services.html"><button class="c">Shop</button></a>
+            <a href="gallery.html"><button class="c">Lookbooks</button></a>
+            <a href="about.html"><button class="c">About us</button></a>
+        </nav>
         <div class="cesta">
-            <button class="d" onclick="visita('shopping_list.html')"><img src="images/lista_compra.png"></button>
+            <a href="shopping_list.html"><img src="images/lista_compra.png"></a>
         </div>
     </div>
 
@@ -34,14 +33,14 @@
         <!-- tablas -->
         <div id="tabla_anadir_Carrito_Tallas" class="tablas_tallas">
             <strong class="nombre_producto">Camiseta SACAI</strong>
-            <form id="anadir_producto_carrito" action="pagina_prueba.html" method="GET">
-                <input type="text" id="nombre_producto" name="nombre_producto" value="Cami_SACAI" readonly
-                    class="campo_oculto">
+            <!-- <form id="anadir_producto_carrito" action="pagina_prueba.html" method="GET"> -->
+                <!-- <input type="text" id="nombre_producto" name="nombre_producto" value="Cami_SACAI" readonly
+                    class="campo_oculto"> -->
                 <!-- readonly para que nadie edite la variable (value) y hidden pa q no se vea -->
                 <table>
                     <caption class="precio_producto">30€ | Camiseta Unisex</caption>
-                    <input type="number" id="precio_producto" name="precio_producto" value="30" readonly
-                        class="campo_oculto">
+                    <!-- <input type="number" id="precio_producto" name="precio_producto" value="30" readonly
+                        class="campo_oculto"> -->
                     <tbody>
                         <td>
                             <div class="contador_productos">
@@ -50,7 +49,13 @@
                                 <button id="suma" type="button" onclick="increment()">+</button>
                             </div>
                         </td>
-                        <td><button class="carrito" type="submit">Agregar al carrito</button></td>
+                        <!-- <td><button class="carrito" type="submit">Agregar al carrito</button></td> -->
+                        <td>
+                            <button class="carrito" 
+                                onclick="addToCart(1,'Cami_SACAI', 'precio_producto', document.getElementById('cantidad').value, getSelectedTalla())">
+                                Agregar al carrito
+                            </button>
+                        </td>
                     </tbody>
                 </table>
                 <br><br>

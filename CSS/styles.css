@@ -358,12 +358,6 @@ a {
     height: 4em;
 }
 
-.cuerpo_carrito_negro {
-    background: rgb(0, 0, 0, 0.5);
-    height: 100vw;
-    width: 100vw;
-}
-
 .carrito_general {
     position: absolute;
     background-color: #ffffff;

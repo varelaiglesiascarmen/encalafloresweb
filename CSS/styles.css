@@ -376,6 +376,15 @@ a {
 .carrito_button {
     text-align: center;
 }
+ .enviar_negro{
+    width: 200px;
+    font-size: 12px;
+    padding: 10px 50px;
+    background-color: rgba(0, 0, 0);
+    color: rgb(255, 255, 255);
+    display: block; 
+    margin: 0 auto;
+ }
 
 .carrito {
     width: 200px;
@@ -442,6 +451,39 @@ footer{
     color: #ffffff;
 }
 
+.link_txt{
+    color: #000000;
+}
+
+.formulario_contacto{
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+margin: 0;
+padding: 20px;
+width: 80%;
+max-width: 600px;
+}
+
+.button_contacto{
+    color: rgb(0, 0, 0, 0.5);
+    padding: 12px 50px;
+    border: 2px solid rgb(0, 0, 0, 0.7);
+}
+
+.button_contacto_email{
+    color: rgb(0, 0, 0, 0.5);
+    padding: 12px 192px;
+    border: 2px solid rgb(0, 0, 0, 0.7);
+}
+
+.button_contacto_comentario{
+    color: rgb(0, 0, 0, 0.5);
+    padding: 130px 192px;
+    border: 2px solid rgb(0, 0, 0, 0.7);
+}
+
 .main_about{
 display: flex;
 justify-content: space-between;
@@ -475,4 +517,7 @@ width: 100%;
 .hijo_texto_about a { /*botones*/
     display: inline-block;
     margin-bottom: 10px;
+}
+.main_txt {
+
 }

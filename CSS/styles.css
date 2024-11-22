@@ -327,35 +327,6 @@ a {
     border: #ffffff;
 }
 
-/*https://www.youtube.com/watch?v=XGyTnLoGOX0  acordeon*/
-
-.acordeon {
-    padding: 2mm;
-    max-width: 120em;
-}
-
-.acordeon_bloque {
-    margin: 0 0 1em;
-    padding: 1em;
-}
-
-.acordeon_pregunta {
-    margin: 0 0 1em;
-    padding: 1em;
-}
-
-.acordeon_respuesta {
-    padding: 0em;
-    height: 0;
-    overflow: hidden;
-    transition: all 5s ease;
-    /* para dar interacción a esa lista*/
-}
-
-.acordeon_bloque_activo_respuesta {
-    height: 4em;
-}
-
 .carrito_general {
     position: absolute;
     background-color: #ffffff;
@@ -558,5 +529,17 @@ width: 100%;
 }
 
 .noticias{
+    position: absolute;
+    right: 0px;
+    width: 300px;
+    border: 3px solid #73AD21;
+    padding: 10px;
+}
+
+.preguntas_padre{
+
+}
+
+.preguntas_hijo{
 
 }

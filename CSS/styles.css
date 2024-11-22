@@ -105,13 +105,12 @@ a {
 .nombre {
     color: #780f0f;
     /*text-shadow: 2px 2px 3px rgb(179, 144, 144);*/
-    text-align: left;
+    text-align: center;
 }
 
 .productos {
     display: flex;
     align-items: center;
-
 }
 
 .producto_item {

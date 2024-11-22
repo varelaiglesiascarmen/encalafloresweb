@@ -150,31 +150,24 @@
             return 0; // un valor por defecto si ninguna talla está seleccionada
         }
         window.getSelectedTalla = getSelectedTalla;
-        
+
         // Mostrar el carrito al cargar la página
         // Función para mostrar el carrito (en cart.html)
         function displayCart() {
             let cart = JSON.parse(localStorage.getItem('cart')) || [];
             let cartContainer = document.getElementById('cart-items');
             let total = 0;
-            cartContainer.innerHTML = "<p>"+cart.length+" productos en el carrito.</p>";
+            cartContainer.innerHTML = "<p>" + cart.length + " productos en el carrito.</p>";
             // Si el carrito está vacío
             if (cart.length === 0) {
-                cartContainer.innerHTML = '<p>Carrito vac&iacuote;o</p>';
+                cartContainer.innerHTML = "<h2>Carrito vacío</h2>";
                 return;
             }
 
             // Mostrar los productos del carrito
             cart.forEach(item => {
-    //             cartContainer.innerHTML += `
-    //     <div>
-    //       <p>${item.name} - Talla:${item.talla} ${item.price} € x ${item.quantity}</p>
-    //     </div>
-    //   `;
-    //             total += item.price * item.quantity;
-    //         });
-            cartContainer.innerHTML += `
-                <table>
+                cartContainer.innerHTML += `
+                <table class='factura'>
                     <thead>
                         <tr>
                             <th>Producto</th>
@@ -186,16 +179,17 @@
                     </thead>
                     <tbody>
             `;
+            });
 
             cart.forEach(item => {
                 const itemTotal = item.price * item.quantity;
                 cartContainer.innerHTML += `
                     <tr>
-                        <td>${item.name}</td>
-                        <td>${item.talla}</td>
-                        <td>${item.price} €</td>
-                        <td>${item.quantity}</td>
-                        <td>${itemTotal} €</td>
+                        <td class='fila'>${item.name}</td>
+                        <td class='fila'>${item.talla}</td>
+                        <td class='fila'>${item.price} €</td>
+                        <td class='fila'>${item.quantity}</td>
+                        <td class='fila'>${itemTotal} €</td>
                     </tr>
                 `;
                 total += itemTotal;
@@ -208,11 +202,15 @@
 
             // Mostrar el total
             cartContainer.innerHTML += `<h3>Total: ${total} €</h3>`;
-
-            // Mostrar el total
-            cartContainer.innerHTML += `<h3>Total: $${total}</h3>`;
         }
 
         window.displayCart = displayCart;
+
+        function clearCart() {
+            localStorage.removeItem('cart');
+            alert('El carrito ha sido vaciado.');
+            location.reload();
+        }
+        window.clearCart = clearCart;
     });
 })();

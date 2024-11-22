@@ -1,5 +1,5 @@
 * {
-    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
 
 a {
@@ -304,22 +304,26 @@ a {
     color: rgb(0, 0, 0);
     border: 0px solid rgb(97, 97, 97);
 }
-.button_talla{
-    background: transparent ;
+
+.button_talla {
+    background: transparent;
     border: 0px solid;
     font-size: larger;
     color: rgb(66, 63, 63);
 }
+
 .nombre_producto {
     color: rgb(175, 21, 21);
     font-size: 50px;
     text-shadow: 2px 2px 5px rgb(0, 0, 0, 0.5);
 }
+
 .precio_producto {
     text-align: left;
     color: #000000;
     font-size: x-large;
 }
+
 .campo_oculto {
     color: #ffffff;
     border: #ffffff;
@@ -328,33 +332,39 @@ a {
 /*https://www.youtube.com/watch?v=XGyTnLoGOX0  acordeon*/
 
 .acordeon {
-padding: 2mm;
-max-width: 120em;
+    padding: 2mm;
+    max-width: 120em;
 }
+
 .acordeon_bloque {
-margin: 0 0 1em;
-padding: 1em;
+    margin: 0 0 1em;
+    padding: 1em;
 }
-.acordeon_pregunta{
-margin: 0 0 1em;
-padding: 1em;
+
+.acordeon_pregunta {
+    margin: 0 0 1em;
+    padding: 1em;
 }
-.acordeon_respuesta{
-padding: 0em;
-height: 0;
-overflow: hidden;
-transition: all 5s ease; /* para dar interacción a esa lista*/
+
+.acordeon_respuesta {
+    padding: 0em;
+    height: 0;
+    overflow: hidden;
+    transition: all 5s ease;
+    /* para dar interacción a esa lista*/
 }
-.acordeon_bloque_activo_respuesta{
+
+.acordeon_bloque_activo_respuesta {
     height: 4em;
 }
 
 .cuerpo_carrito_negro {
-    background: rgb(0, 0, 0,0.5);
+    background: rgb(0, 0, 0, 0.5);
     height: 100vw;
     width: 100vw;
 }
-.carrito_general{
+
+.carrito_general {
     position: absolute;
     background-color: #ffffff;
     right: 0px;
@@ -362,7 +372,7 @@ transition: all 5s ease; /* para dar interacción a esa lista*/
     padding: 10px;
 }
 
-.carrito_x{
+.carrito_x {
     position: absolute;
     right: 10px;
     border: 0;
@@ -370,33 +380,50 @@ transition: all 5s ease; /* para dar interacción a esa lista*/
     font-weight: bold;
 }
 
-.carrito_button{
-text-align: center;
+.carrito_button {
+    text-align: center;
 }
 
-.carrito{
+.carrito {
     width: 200px;
     font-size: 12px;
     padding: 10px 50px;
     background-color: rgba(0, 0, 0);
     color: rgb(255, 255, 255);
 }
-.pie{
+
+.factura {
+    border: #000000 2px solid;
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.factura th {
+    border: 1px solid #000000;
+    padding: 8px;
+    text-align: left;
+}
+
+.factura td {
+    background-color: aqua;
+}
+
+.factura th {
+    background-color: #f2f2f2;
+}
+
+.pie {
     background-color: #000000;
     position: relative;
     color: #ffffff;
     height: 100%;
     width: 100%;
 }
-.pie-left {
 
-}
-.rrss {
+.pie-left {}
 
-}
-.help {
+.rrss {}
 
-}
-.politicas{
+.help {}
 
-}
+.politicas {}

@@ -33,14 +33,8 @@
         <!-- tablas -->
         <div id="tabla_anadir_Carrito_Tallas" class="tablas_tallas">
             <strong class="nombre_producto">Camiseta SACAI</strong>
-            <!-- <form id="anadir_producto_carrito" action="pagina_prueba.html" method="GET"> -->
-                <!-- <input type="text" id="nombre_producto" name="nombre_producto" value="Cami_SACAI" readonly
-                    class="campo_oculto"> -->
-                <!-- readonly para que nadie edite la variable (value) y hidden pa q no se vea -->
                 <table>
                     <caption class="precio_producto">30€ | Camiseta Unisex</caption>
-                    <!-- <input type="number" id="precio_producto" name="precio_producto" value="30" readonly
-                        class="campo_oculto"> -->
                     <tbody>
                         <td>
                             <div class="contador_productos">
@@ -49,10 +43,9 @@
                                 <button id="suma" type="button" onclick="increment()">+</button>
                             </div>
                         </td>
-                        <!-- <td><button class="carrito" type="submit">Agregar al carrito</button></td> -->
                         <td>
                             <button class="carrito" 
-                                onclick="addToCart(1,'Cami_SACAI', 'precio_producto', document.getElementById('cantidad').value, getSelectedTalla())">
+                                onclick="addToCart(1,'Cami_SACAI', '30', document.getElementById('cantidad').value, getSelectedTalla())">
                                 Agregar al carrito
                             </button>
                         </td>
@@ -103,7 +96,6 @@
                         </tr>
                     </tbody>
                 </table>
-            </form>
             <br />
             <button id="guia_tabla" class="button_talla">Guía de tallas</button>
         </div>
@@ -142,34 +134,4 @@
         </div>
     </div>
 </footer>
-
-<script>
-    function increment() {
-        var cantidad = document.getElementById('cantidad');
-        cantidad.value = parseInt(cantidad.value) + 1;
-    }
-
-    function decrement() {
-        var cantidad = document.getElementById('cantidad');
-        if (cantidad.value > 1) {
-            cantidad.value = parseInt(cantidad.value) - 1;
-        }
-    }
-
-    function seleccionarTalla(talla) {
-        var botones_a_borrar = document.querySelectorAll('button[class="talla_seleccionada"]');
-        for (var i = 0; i < botones_a_borrar.length; i++) {
-            botones_a_borrar[i].classList.remove('talla_seleccionada');
-            botones_a_borrar[i].classList.add('talla');
-        }
-        const element = document.getElementById("bt_" + talla);
-        if (element) {
-            element.classList.remove('talla');
-            element.classList.add('talla_seleccionada');
-        }
-    }
-</script>
-
-
-
 </html>

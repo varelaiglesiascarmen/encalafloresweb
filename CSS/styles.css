@@ -411,19 +411,69 @@ a {
     text-align: left;
 }
 
-
-.pie {
-    background-color: #000000;
-    position: relative;
+footer{
+    display: flex; /* Establece el contenedor como un flexbox */
+    justify-content: space-between;  /* Alinea los elementos de manera distribuida */ 
+    padding: 20px;
+    background-color: rgb(0, 0, 0, 0.9);
     color: #ffffff;
-    height: 100%;
-    width: 100%;
 }
 
-.pie-left {}
+.pie {
+    display: flex; /* Flexbox en el footer */
+    justify-content: space-between;  /* Espaciado entre columnas */
+    width: 100%; 
+}
 
-.rrss {}
+.pie-left {
+    display: flex; /* Flexbox para las columnas internas */
+    justify-content: space-between;
+    width: 100%;  
+}
+    
+.columna_footer {
+    flex: 1; /* Cada columna ocupa un espacio igual */
+    padding: 10px;
+    display: block; /* Hace que los enlaces se apilen verticalmente */
+    margin-bottom: 5px; /* Espaciado entre enlaces */
+    max-width: 100%;            /* Asegura que las imágenes no se desborden */
+}
 
-.help {}
+.link_pie{
+    color: #ffffff;
+}
 
-.politicas {}
+.main_about{
+display: flex;
+justify-content: space-between;
+align-items: center;
+padding: 0px;
+}
+
+.foto_about{
+margin: 0;
+width: 100%;
+}
+
+.foto_about_patio{
+    width: 70%;
+    height: auto;
+}
+
+.padre_texto_about{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex: 1;
+    align-items: center;
+}
+
+.hijo_texto_about{
+    max-width: 600px;
+    text-align: center;
+}
+
+.hijo_texto_about a { /*botones*/
+    display: inline-block;
+    margin-bottom: 10px;
+}

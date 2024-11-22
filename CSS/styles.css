@@ -393,24 +393,30 @@ a {
 }
 
 .factura {
-    border: #000000 2px solid;
-    width: 100%;
-    border-collapse: collapse;
+    position: relative;
+    width: 80%; 
+    margin: 0 auto;
+    border: none;
 }
 
 .factura th {
-    border: 1px solid #000000;
+    padding: 8px;
+    text-align: left;
+    width: 80%;
+    background-color: rgb(169, 169, 169);
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+}
+.factura td {
+    border: 1px solid black;
+    padding: 8px;
+    text-align: left;
+}
+.factura td {
     padding: 8px;
     text-align: left;
 }
 
-.factura td {
-    background-color: aqua;
-}
-
-.factura th {
-    background-color: #f2f2f2;
-}
 
 .pie {
     background-color: #000000;

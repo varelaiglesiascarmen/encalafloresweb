@@ -25,14 +25,34 @@
             <a href="shopping_list.html"><img src="images/lista_compra.png"></a>
         </div>
     </div>
+    <main>
+        <!-- cart.html -->
+        <h1>Carrito de la compra</h1>
+        <div class="factura">
+            <table id="cart-table" class="factura">
+                <thead>
+                    <tr>
+                        <th>Producto</th>
+                        <th>Precio</th>
+                        <th>Cantidad</th>
+                        <th>Total</th>
+                    </tr>
+                </thead>
+                <tbody id="cart-items">
+                    <!-- Aquí se pintarán los productos del carrito -->
 
-    <!-- cart.html -->
-    <h1>Carrito de la compra</h1>
-    <div id="cart-items"></div>
-    <br>
+                </tbody>
+            </table>
+            <div class="total-factura">
+                <h3 id="total-price"></h3>
+            </div>
+        </div>
+    </main>
+    <br /><br />
     <a href="services.html"><button class="a">Seguir comprando</button></a>
     <a href="page2.html"><button class="a">Terminar la compra y Pagar</button></a>
-    <br/><br/>
+    <br /><br />
     <button class="a" onclick="clearCart()">Vaciar el Carrito</button>
 </body>
+
 </html>

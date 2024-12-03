@@ -523,29 +523,25 @@ footer {
     color: #000000;
 }
 
-.formulario_contacto {
+.contacto{
+    margin-left: 100px;
+}
+
+.formulario_contacto_padre{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.formulario_contacto_hijo{
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    margin: 0;
     padding: 20px;
+    padding-left: 200px;
     width: 80%;
     max-width: 600px;
-}
-.formulario_contacto_padre{
-
-}
-
-.formulario_contacto_hijo{
-display: flex;
-flex-direction: column;
-align-items: center;
-justify-content: center;
-margin: 0;
-padding: 20px;
-width: 80%;
-max-width: 600px;
 }
 
 .button_contacto {
@@ -575,6 +571,9 @@ max-width: 600px;
 
 .foto_about {
     margin: 0;
+}
+
+.foto_about img {
     width: 100%;
 }
 
@@ -602,4 +601,76 @@ max-width: 600px;
     margin-bottom: 10px;
 }
 
-.main_txt {}
+.politica_parrafo{
+    margin-left: 100px;
+    margin-right: 100px;
+    line-height: 2;
+    font-size:x-large;
+}
+
+.titulo{
+    color: rgb(175, 21, 21);
+    font-size: 40px;
+    text-shadow: 2px 2px 5px rgb(0, 0, 0, 0.5);
+}
+
+.nombre_marcas{
+    color:#211f1f;
+    font-size: 20px;
+    text-shadow: 2px 2px 5px rgb(0, 0, 0, 0.5);
+}
+
+.gallery_padre{
+    display: flex;
+    align-items: center;
+}
+
+.gallery_videos{
+    align-items: center;
+    padding-left: 15px;
+    width: 100%;
+    height: auto;
+}
+
+.video{
+    width: 1000px; 
+    height: 500px; 
+}
+
+.gallery_noticias{
+    display: flex;
+    flex-direction: column;
+    justify-content: right;
+    border:none;
+    width: 1000px; 
+    height: 1000px; 
+}
+
+.devolucion {
+    display: flex;
+    align-items: center;
+}
+
+.devolucion_formulario {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex: 1;
+    align-items: center;
+}
+
+.txt_devolucion {
+    margin-left: 20px;
+    font-size:x-large;
+}
+
+.devolucion_foto {
+    padding: 0;
+    margin: 0;
+}
+
+.preguntas{
+    margin-left: 100px;
+    margin-right: 100px;
+    font-size:x-large;
+}
